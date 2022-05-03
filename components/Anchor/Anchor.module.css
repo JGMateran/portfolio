@@ -1,0 +1,21 @@
+.anchor {
+  display: inline-block;
+  position: relative;
+  @apply text-slate-300 leading-7;
+}
+
+.anchor::before {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 0;
+  right: 0;
+  position: absolute;
+  bottom: 0;
+  @apply bg-slate-400 duration-200;
+}
+
+.anchor:hover::before {
+  left: 0;
+  width: 100%;
+}

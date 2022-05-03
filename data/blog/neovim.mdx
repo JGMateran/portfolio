@@ -1,0 +1,102 @@
+---
+title: 'Hola mundo'
+---
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main p > b > strong:has(.hola) {
+  content: attr(data-content);
+  content: 'Hola mundo';
+  min-height: 100vh;
+  padding: 4rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.token.arule {
+  color: red;
+}
+
+.token.keyword,
+.token.punctuation,
+.token.rule {
+	@apply text-cyan-300;
+}
+
+.token.string,
+.token.attr-value {
+	@apply text-green-300;
+}
+
+.token.function {
+	@apply text-blue-300;
+}
+
+.token.tag {
+	@apply text-red-300;
+}
+
+.token.attr-name {
+	@apply text-purple-300;
+}
+
+.token.maybe-class-name,
+.token.class {
+	@apply text-orange-300;
+}
+```
+
+```tsx
+import type { GetStaticProps } from 'next'
+import type { Post } from 'contentlayer/generated'
+
+import { allPosts } from 'contentlayer/generated'
+import { useMDXComponent } from 'next-contentlayer/hooks'
+
+import { Container } from '@/components/Container'
+
+const components = {}
+
+export default function PostPage ({ post }: { post: Post }) {
+  const MDXContent = useMDXComponent(post.body.code)
+
+  return (
+    <div className="min-h-screen bg-white">
+      <Container className="py-10" size="small">
+        <div className="prose w-full mx-auto max-w-full">
+          <MDXContent components={components} />
+        </div>
+      </Container>
+    </div>
+  )
+}
+
+export const getStaticPaths = () => {
+  const paths = allPosts.map((blog) => ({
+    params: {
+      slug: blog.slug
+    }
+  }))
+
+  return {
+    paths,
+    fallback: false
+  }
+}
+
+export const getStaticProps: GetStaticProps = (context) => {
+  const post = allPosts.find((post) => post.slug === context.params?.slug)
+
+  return {
+    props: {
+      post
+    }
+  }
+}
+```

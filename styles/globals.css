@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+code[class*="language-"],
+pre[class*="language-"] {
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 2;
+	-o-tab-size: 2;
+	tab-size: 2;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+.token.keyword,
+.token.punctuation,
+.token.rule,
+.token.combinator {
+	@apply text-cyan-300;
+}
+
+.token.string,
+.token.attr-value {
+	@apply text-green-300;
+}
+
+.token.function {
+	@apply text-blue-300;
+}
+
+.token.tag,
+.token.selector,
+.token.number,
+.token.unit,
+.token.color {
+	@apply text-red-300;
+}
+
+.token.attr-name,
+.token.pseudo-class,
+.token.property {
+	@apply text-purple-300;
+}
+
+.token.maybe-class-name,
+.token.class {
+	@apply text-orange-300;
+}
+
+.line-numbers .line-numbers-rows { 
+  border-right-color: #2c2937;
+}
+.line-numbers-rows > span:before { 
+  color: #3c3949;
+}
+/* overrides color-values for the Line Highlight plugin
+ * https://github.com/PrismJS/prism/blob/gh-pages/plugins/line-highlight/prism-line-highlight.css
+ */ 
+.line-highlight { 
+  background: rgba(179,117,55,0.2);
+  background:linear-gradient(to right, rgba(179,117,55,0.2) 70%, rgba(179,117,55,0));
+}  

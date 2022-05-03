@@ -1,0 +1,30 @@
+.line {
+  position: relative;
+  width: 22px;
+}
+
+.line::before,
+.line::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 22px;
+  height: 1px;
+  @apply bg-slate-400 duration-200;
+}
+
+.line::before {
+  transform: translateY(-4px);
+}
+
+.line::after {
+  transform: translateY(4px);
+}
+
+.line.open::before {
+  transform: rotate(45deg);
+}
+
+.line.open::after {
+  transform: rotate(-45deg);
+}
