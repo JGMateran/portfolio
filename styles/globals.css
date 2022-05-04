@@ -4,7 +4,8 @@
 
 code[class*="language-"],
 pre[class*="language-"] {
-	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-family: 'Fira Code', Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	@apply selection:bg-blue-600 selection:text-white text-sm;
 	white-space: pre;
 	word-spacing: normal;
 	word-break: normal;
@@ -56,16 +57,17 @@ pre[class*="language-"] {
 	@apply text-orange-300;
 }
 
-.line-numbers .line-numbers-rows { 
-  border-right-color: #2c2937;
+.token.comment {
+	@apply text-gray-400;
 }
-.line-numbers-rows > span:before { 
-  color: #3c3949;
+
+.code-line.line-number::before {
+	content: attr(line);
+	width: 3.1rem;
+	padding-right: 1rem;
+	text-align: right;
+	display: inline-block;
+	@apply text-slate-400 bg-gray-800;
+	position: sticky;
+	left: 0;
 }
-/* overrides color-values for the Line Highlight plugin
- * https://github.com/PrismJS/prism/blob/gh-pages/plugins/line-highlight/prism-line-highlight.css
- */ 
-.line-highlight { 
-  background: rgba(179,117,55,0.2);
-  background:linear-gradient(to right, rgba(179,117,55,0.2) 70%, rgba(179,117,55,0));
-}  

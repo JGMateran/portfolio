@@ -37,7 +37,9 @@ const contentLayerConfig = makeSource({
       remarkGfm
     ],
     rehypePlugins: [
-      rehypePrism,
+      [rehypePrism, {
+        showLineNumbers: true
+      }],
       rehypeSlug
     ]
   }
