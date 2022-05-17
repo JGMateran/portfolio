@@ -16,7 +16,8 @@ export function Button <T extends ElementType> (
   const {
     as: Component = 'button',
     variant = 'normal',
-    className
+    className,
+    ...rest
   } = props
 
   const classes = clsx(
@@ -30,7 +31,7 @@ export function Button <T extends ElementType> (
   return (
     <Component
       className={classes}
-      {...props}
+      {...rest}
     />
   )
 }
