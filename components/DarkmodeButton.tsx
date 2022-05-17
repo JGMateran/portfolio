@@ -1,6 +1,5 @@
 import {
-  useState,
-  useEffect
+  useCallback
 } from 'react'
 
 import {
@@ -12,21 +11,21 @@ import { Switch } from '@/components/Switch'
 import { useLocalStorage } from '@/hooks/useLocalStorage'
 
 export function DarkmodeButton () {
-  const [darkmode, setDarkmode] = useLocalStorage('darkmode', 'light')
+  const [darkmode, setDarkmode] = useLocalStorage('theme', 'dark')
 
-  const handleToggleDarkmode = () => {
-    setDarkmode(darkmode === 'light' ? 'dark' : 'light')
-  }
+  const handleClick = useCallback(() => {
+    const nextValue = darkmode === 'dark' ? 'light' : 'dark'
+
+    setDarkmode(nextValue)
+    document.documentElement.setAttribute('class', nextValue)
+  }, [setDarkmode, darkmode])
 
   return (
     <div className="flex items-center space-x-4">
-      <span>
-        {darkmode}
-      </span>
       <Sun />
       <Switch
-        active={false}
-        onClick={handleToggleDarkmode}
+        active={darkmode === 'dark'}
+        onClick={handleClick}
       />
       <Moon />
     </div>

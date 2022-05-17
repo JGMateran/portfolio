@@ -2,7 +2,6 @@ import type {
   ReactNode
 } from 'react'
 
-import { MainHead } from '@/components/MainHead'
 import { Navbar } from '@/components/Navbar'
 import { Header } from '@/components/Header'
 import { Container } from '@/components/Container'
@@ -12,9 +11,6 @@ import { Social } from '@/components/Social'
 import { Text } from '@/components/Text'
 import { Footer } from '@/components/Footer'
 import { Divider } from '@/components/Divider'
-
-import Script from 'next/script'
-import Head from 'next/head'
 
 export function HomeLayout ({
   children
@@ -36,9 +32,6 @@ export function HomeLayout ({
               <Heading size="huge" className="leading-snug mb-4 font-extrabold">
                 Hi, I am Greg. <span className="text-slate-400">I build things for web.</span>
               </Heading>
-              {/* <Text>
-                I am in charge of creating extraordinary ideas for ordinary problems
-              </Text> */}
               <Text>
                 Soy un desarrollador web fronted expecializado en React con +5 años de experiencia creando soluciones extraordinarias para problemas ordinarios.
               </Text>

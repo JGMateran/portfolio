@@ -18,15 +18,13 @@ export function Navbar () {
   return (
     <div className="sticky top-0 z-30">
       <Container className="flex items-center h-14 px-6">
-        <h2 className="text-xl font-bold flex-1">
+        <h2 className="text-xl font-bold flex-1 text-white">
           <Link href="/">
             reburn.dev
           </Link>
         </h2>
         <div className="flex items-center text-sm space-x-4 text-slate-300">
-          <Link href="/blog">
-            <Anchor className="text-blue-600">Blog</Anchor>
-          </Link>
+          <Anchor className="text-blue-600">Blog</Anchor>
           <Anchor>Projects</Anchor>
           <Anchor>Contact me</Anchor>
           <BurgerButton

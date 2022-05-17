@@ -1,3 +1,5 @@
+import type { FormEvent } from 'react'
+
 import { useForm, ValidationError } from '@formspree/react'
 
 import { Container } from '@/components/Container'
@@ -6,14 +8,21 @@ import { Button } from '@/components/Button'
 import { Heading } from '@/components/Heading'
 import { Text } from '@/components/Text'
 import { Social } from '@/components/Social'
+import { ArrowRight } from 'react-feather'
 
 export function ContactForm () {
-  const [state, handleSubmit] = useForm('xnqwobwa')
+  const [state, onSubmit] = useForm('xnqwobwa')
 
   if (state.succeeded) {
     return (
       <h2>Se ha enviado el mensaje</h2>
     )
+  }
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    console.log('sending')
+    // onSubmit()
   }
 
   return (
@@ -46,7 +55,7 @@ export function ContactForm () {
 
         <Input
           label="Mensaje"
-          placeholder="I want to work with you"
+          placeholder="what's up dude, I want to hire you"
           as="textarea"
           className="h-36 resize-none"
           name="message"
@@ -58,8 +67,19 @@ export function ContactForm () {
         />
 
         <div className="flex justify-center">
-          <Button variant="outlined" disabled={state.submitting}>
-            Send message
+          <Button
+            variant="outlined"
+            disabled={state.submitting}
+            className="inline-flex space-x-2 items-center"
+          >
+            <span>
+            {
+              state.submitting
+                ? 'Sending...'
+                : 'Send message'
+            }
+            </span>
+            <ArrowRight className="w-4 h-4" />
           </Button>
         </div>
       </form>
