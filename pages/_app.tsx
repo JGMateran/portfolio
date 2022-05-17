@@ -5,6 +5,8 @@ import '../styles/globals.css'
 
 import Router from 'next/router'
 
+import { ThemeProvider } from 'next-themes'
+
 import 'nprogress/nprogress.css'
 import NProgress from 'nprogress'
 
@@ -32,7 +34,9 @@ function MyApp ({ Component, pageProps }: AppProps) {
     []
   )
   return (
-    <Component {...pageProps} />
+    <ThemeProvider attribute="class" defaultTheme="dark" enableColorScheme={false}>
+      <Component {...pageProps} />
+    </ThemeProvider>
   )
 }
 

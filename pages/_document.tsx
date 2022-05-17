@@ -18,23 +18,6 @@ export default class MyDocument extends Document {
         </Head>
 
         <body className="dark:bg-gray-900">
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                (function () {
-                  var theme = window.localStorage.getItem('theme')
-
-                  if (theme == null) {
-                    theme = 'dark'
-                    window.localStorage.setItem('theme', theme)
-                  }
-
-                  document.documentElement.setAttribute('class', theme)
-                })()
-              `
-            }}
-          />
-
           <Main />
           <NextScript />
         </body>
