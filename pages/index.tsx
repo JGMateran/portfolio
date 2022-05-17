@@ -1,80 +1,13 @@
-import type { ReactNode } from 'react'
-
-import { useForm, ValidationError } from '@formspree/react'
-
 import { Skills } from '@/components/Skills'
 import { Divider } from '@/components/Divider'
 import { Container } from '@/components/Container'
 import { Heading } from '@/components/Heading'
 import { Text } from '@/components/Text'
-import { Button } from '@/components/Button'
 import { Article } from '@/components/Article'
 import { ContactForm } from '@/components/ContactForm'
 import { HomeLayout } from '@/layouts/HomeLayout'
 
 import { NextSeo } from 'next-seo'
-
-function CustomLink ({
-  children
-}: {
-  children: ReactNode
-}) {
-  return (
-    <a href="#" className="border-b-2 border-slate-800 focus:outline-none focus-visible:ring-2 border-gray-800 bg-slate-700/10 hover:bg-slate-700/20 text-slate-300 font-semibold text-slate-300 inline-block">
-      {children}
-    </a>
-  )
-}
-
-// Make sure to run npm install @formspree/react
-// For more help visit https://formspr.ee/react-help
-// function ContactForm () {
-//   const [state, handleSubmit] = useForm('xnqwobwa')
-//
-//   if (state.succeeded) {
-//     return <p>Thanks for joining!</p>
-//   }
-//
-//   return (
-//     <form onSubmit={handleSubmit} className="text-black p-8 bg-white rounded-lg flex flex-col">
-//       <label className="flex flex-col mb-8">
-//         <span className="mb-2 font-semibold text-sm">
-//           Your email
-//         </span>
-//         <input
-//           id="email"
-//           type="email"
-//           name="email"
-//           className="border border-gray-500 rounded-sm p-3"
-//         />
-//         <ValidationError
-//           prefix="Email"
-//           field="email"
-//           errors={state.errors}
-//         />
-//       </label>
-//       <label className="flex flex-col mb-8">
-//         <span className="mb-2 font-semibold text-sm">
-//           Your message
-//         </span>
-//         <textarea
-//           id="message"
-//           name="message"
-//           className="border border-gray-500 rounded-sm p-3"
-//         />
-//         <ValidationError
-//           prefix="Message"
-//           field="message"
-//           errors={state.errors}
-//         />
-//       </label>
-//       <Button type="submit" disabled={state.submitting}>
-//         Submit
-//       </Button>
-//     </form>
-//   )
-// }
-
 export default function Home () {
   return (
     <HomeLayout>
@@ -88,7 +21,7 @@ export default function Home () {
           Experience
         </Heading>
         <Text>
-          <CustomLink>Dolor minus molestias quam</CustomLink> mollitia iusto totam. Eum doloribus velit deleniti quas explicabo. Minima ea delectus praesentium maiores itaque. Distinctio non expedita ab beatae ipsam consequatur Alias eligendi nulla optio?
+          Dolor minus molestias quam mollitia iusto totam. Eum doloribus velit deleniti quas explicabo. Minima ea delectus praesentium maiores itaque. Distinctio non expedita ab beatae ipsam consequatur Alias eligendi nulla optio?
         </Text>
       </Container>
 

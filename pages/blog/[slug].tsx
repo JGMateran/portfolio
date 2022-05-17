@@ -5,6 +5,7 @@ import { allPosts } from 'contentlayer/generated'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 
 import { Container } from '@/components/Container'
+import { HomeLayout } from '@/layouts/HomeLayout'
 
 const components = {}
 
@@ -12,14 +13,14 @@ export default function PostPage ({ post }: { post: Post }) {
   const MDXContent = useMDXComponent(post.body.code)
 
   return (
-    <div className="min-h-screen bg-white">
-      <Container className="py-10" size="small">
-        <div className="prose w-full mx-auto max-w-full">
+    <HomeLayout>
+      <div className="min-h-screen">
+        <div className="prose dark:prose-dark w-full mx-auto max-w-full">
           <h2>{post.title}</h2>
           <MDXContent components={components} />
         </div>
-      </Container>
-    </div>
+      </div>
+    </HomeLayout>
   )
 }
 
