@@ -3,9 +3,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 import { Container } from '@/components/Container'
-import { DarkmodeButton } from '@/components/DarkmodeButton'
 import { Anchor } from '@/components/Anchor'
-import { Button } from '@/components/Button'
 import { BurgerButton } from '@/components/BurgerButton'
 
 export function Navbar () {
@@ -24,9 +22,9 @@ export function Navbar () {
           </Link>
         </h2>
         <div className="flex items-center text-sm space-x-4 text-slate-300">
-          <Anchor className="text-blue-600">Blog</Anchor>
-          <Anchor>Projects</Anchor>
-          <Anchor>Contact me</Anchor>
+          <Anchor href="/blog">Blog</Anchor>
+          <Anchor href="/projects">Projects</Anchor>
+          <Anchor href="/#contact">Contact me</Anchor>
           <BurgerButton
             open={isOpen}
             onClick={handleClick}

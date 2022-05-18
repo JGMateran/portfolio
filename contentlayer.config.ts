@@ -5,11 +5,17 @@ import {
   makeSource
 } from 'contentlayer/source-files'
 
+import readingTime from 'reading-time'
+
 import rehypePrism from 'rehype-prism-plus'
 import rehypeSlug from 'rehype-slug'
 import remarkGfm from 'remark-gfm'
 
 const computedFields: ComputedFields = {
+  readingTime: {
+    type: 'json',
+    resolve: (doc) => readingTime(doc.body.raw)
+  },
   slug: {
     type: 'string',
     resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, '')
@@ -22,6 +28,10 @@ const Blog = defineDocumentType(() => ({
   contentType: 'mdx',
   fields: {
     title: {
+      type: 'string',
+      required: true
+    },
+    publishedAt: {
       type: 'string',
       required: true
     }

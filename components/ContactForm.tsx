@@ -31,7 +31,7 @@ export function ContactForm () {
         <Heading size="big" className="mb-4">
           Contact me
         </Heading>
-        <Text className="">
+        <Text>
           I had love to hear from you. Send me a message and I’ll get back to you. I’m always happy to talk about new projects, opportunities, and collaborations.
         </Text>
       </div>
@@ -73,11 +73,11 @@ export function ContactForm () {
             className="inline-flex space-x-2 items-center"
           >
             <span>
-            {
-              state.submitting
-                ? 'Sending...'
-                : 'Send message'
-            }
+              {
+                state.submitting
+                  ? 'Sending...'
+                  : 'Send message'
+              }
             </span>
             <ArrowRight className="w-4 h-4" />
           </Button>

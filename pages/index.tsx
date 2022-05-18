@@ -1,14 +1,39 @@
+import {
+  useEffect
+} from 'react'
+
+import { GetStaticProps } from 'next'
+
+import type { Post } from 'contentlayer/generated'
+import { allPosts } from 'contentlayer/generated'
+
 import { Skills } from '@/components/Skills'
 import { Divider } from '@/components/Divider'
 import { Container } from '@/components/Container'
 import { Heading } from '@/components/Heading'
 import { Text } from '@/components/Text'
-import { Article } from '@/components/Article'
 import { ContactForm } from '@/components/ContactForm'
 import { HomeLayout } from '@/layouts/HomeLayout'
+import { LatestArticles } from '@/components/LatestArticles'
 
 import { NextSeo } from 'next-seo'
-export default function Home () {
+
+function sortByPostDate (a: Post, b: Post) {
+  return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+}
+
+type HomeProps = {
+  posts: Post[]
+}
+
+export default function Home ({ posts }: HomeProps) {
+  useEffect(
+    () => {
+      console.log(posts)
+    },
+    [posts]
+  )
+
   return (
     <HomeLayout>
       <NextSeo
@@ -49,18 +74,19 @@ export default function Home () {
         </Heading>
       </Container>
 
-      <Article
-        title="Elit maiores minus corporis sed magnam."
-        description="Elit maiores minus corporis sed magnam. Laboriosam ipsa mollitia inventore in placeat Dignissimos accusantium vitae harum officia velit ipsa Porro suscipit laudantium repellat distinctio culpa! Fugit facilis omnis nihil asperiores"
-        read={300}
-        date="13 de abril"
-      />
-
-      <div className="text-lg font-semibold text-slate-400 text-center my-10">
-        Ver todos los articulos
-      </div>
+      <LatestArticles articles={posts} />
 
       <ContactForm />
     </HomeLayout>
   )
+}
+
+export const getStaticProps: GetStaticProps = (context) => {
+  const posts = allPosts.sort(sortByPostDate).slice(0, 3)
+
+  return {
+    props: {
+      posts
+    }
+  }
 }
