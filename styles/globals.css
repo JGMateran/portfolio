@@ -22,6 +22,11 @@ pre[class*="language-"] {
 	hyphens: none;
 }
 
+code[class*="language-"] {
+	display: inline-block;
+	min-width: 100%;
+}
+
 .token.keyword,
 .token.punctuation,
 .token.rule,
@@ -70,4 +75,13 @@ pre[class*="language-"] {
 	@apply text-slate-400 bg-gray-800;
 	position: sticky;
 	left: 0;
+}
+
+.code-line {
+	display: block;
+}
+
+.code-line.highlight-line::before,
+.code-line.highlight-line {
+	@apply bg-slate-700;
 }

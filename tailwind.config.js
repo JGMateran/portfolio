@@ -13,6 +13,13 @@ module.exports = {
         sans: ['Inter', ...defaultTheme.fontFamily.sans]
       },
       typography: ({ theme }) => ({
+        DEFAULT: {
+          css: {
+            pre: {
+              padding: '1.5rem 0'
+            }
+          }
+        },
         dark: {
           css: {
             'h1,h2,h3,h4,h5,h6': {
