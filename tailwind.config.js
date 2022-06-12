@@ -9,6 +9,22 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        dark: '#0D0E12',
+        gray: {
+          50: '#B0B5C0',
+          100: '#A5ABB6',
+          200: '#8E96A4',
+          300: '#788192',
+          400: '#646D7D',
+          500: '#525966',
+          600: '#393E47',
+          700: '#202328',
+          800: '#1b1e23',
+          900: '#16191d'
+        }
+      },
+
       fontFamily: {
         sans: ['Inter', ...defaultTheme.fontFamily.sans]
       },
