@@ -24,7 +24,7 @@ export function Input <T extends ElementType> (
 
   const classes = clsx(
     {
-      'p-3 leading-7 bg-slate-800 placeholder:text-slate-400 focus:outline-none focus:bg-slate-700/50 border-b border-slate-700 focus:border-slate-600 w-full': variant === 'normal',
+      'p-3 border-2 border-gray-600 rounded-lg bg-gray-800 focus:outline-none focus-visible:border-gray-500': variant === 'normal',
       'bg-transparent leading-7 p-3 border border-slate-700 rounded-md': variant === 'outline'
     },
     className

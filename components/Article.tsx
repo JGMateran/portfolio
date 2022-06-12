@@ -29,9 +29,9 @@ export function Article ({
   slug
 }: ArticleProps) {
   return (
-    <article>
+    <article className="px-6 mb-8">
       <Link href={`/blog/${slug}`}>
-        <a className="block focus:outline-none focus-visible:ring-2 py-10 px-6 -mx-6 border-b border-dotted border-slate-700">
+        <a className="block focus:outline-none focus-visible:ring-2 p-10 -mx-6 border bg-gray-800 rounded-lg border-dotted border-gray-600">
           <div className="flex md:justify-start items-center justify-between mb-6 text-sm text-slate-400">
             <div className="md:w-36">
               {formatDate(date)}

@@ -3,6 +3,7 @@ import type { Post } from 'contentlayer/generated'
 import Link from 'next/link'
 
 import { Article } from '@/components/Article'
+import { Divider } from '@/components/Divider'
 
 type LatestArticlesProps = {
   articles: Post[]
@@ -32,7 +33,7 @@ export function LatestArticles ({
           </a>
         </Link>
       </div>
-
+      <Divider />
     </div>
   )
 }
