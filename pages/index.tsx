@@ -15,6 +15,7 @@ import { Text } from '@/components/Text'
 import { ContactForm } from '@/components/ContactForm'
 import { HomeLayout } from '@/layouts/HomeLayout'
 import { LatestArticles } from '@/components/LatestArticles'
+import { Projects } from '@/components/Projects'
 
 import { NextSeo } from 'next-seo'
 
@@ -62,7 +63,9 @@ export default function Home ({ posts }: HomeProps) {
       </Container>
 
       <Skills />
+      <Divider />
 
+      <Projects />
       <Divider />
 
       <Container className="text-center mb-8" gap={false} size="small">
