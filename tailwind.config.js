@@ -32,6 +32,7 @@ module.exports = {
         DEFAULT: {
           css: {
             pre: {
+              backgroundColor: theme('colors.slate.800'),
               padding: '1.5rem 0'
             }
           }
