@@ -12,7 +12,7 @@
   right: 0;
   position: absolute;
   bottom: 0;
-  @apply bg-gray-700 dark:bg-gray-200 duration-200;
+  @apply bg-gray-100 duration-200;
 }
 
 .anchor:hover::before {
