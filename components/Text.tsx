@@ -9,7 +9,7 @@ export function Text ({
   ...props
 }: TextProps) {
   const classes = clsx(
-    'text-gray-600 dark:text-gray-300',
+    'text-gray-600 dark:text-gray-100',
     className
   )
 

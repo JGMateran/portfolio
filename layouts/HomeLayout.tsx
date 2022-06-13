@@ -27,7 +27,7 @@ export function HomeLayout ({
             <div className="flex-1"></div>
             <div className="md:pr-20 text-center md:text-left">
               <Heading size="huge" className="leading-snug mb-4 font-extrabold">
-                Hi, I am Greg. <span className="text-slate-500 dark:text-gray-400">I build things for web.</span>
+                Hi, I am Greg. <span className="text-slate-500 dark:text-gray-200">I build things for web.</span>
               </Heading>
               <Text>
                 Soy un desarrollador web fronted expecializado en React con +5 años de experiencia creando soluciones extraordinarias para problemas ordinarios.

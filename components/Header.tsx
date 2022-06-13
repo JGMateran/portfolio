@@ -18,7 +18,7 @@ export function Header ({
         </div>
       </div>
 
-      <div className="h-14 bg-white/90 backdrop-blur-sm dark:bg-gray-900/90 sticky top-0 z-10"></div>
+      <div className="h-14 bg-white/80 backdrop-blur-sm dark:bg-gray-900/80 sticky top-0 z-10"></div>
     </>
   )
 }

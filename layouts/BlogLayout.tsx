@@ -2,9 +2,9 @@ import { ReactNode } from 'react'
 
 import {
   Facebook,
-  Link2,
   Linkedin,
-  Twitter
+  Twitter,
+  ArrowLeft
 } from 'react-feather'
 
 import { Header } from '@/components/Header'
@@ -30,20 +30,32 @@ export function BlogLayout ({
             <Text>
               Adipisicing officia deserunt nulla consectetur beatae voluptates? Minus quo odio expedita maiores ab. Consequuntur beatae quo eum deserunt aliquid? Ea voluptatum enim voluptas consequatur recusandae fuga iste Incidunt eaque sed
             </Text>
-            <div className="mt-10 text-white">
-              <div className="flex space-x-4 items-center">
-                <a href="#">
-                  <Facebook/>
-                </a>
-                <a href="#">
-                  <Twitter />
-                </a>
-                <a href="#">
-                  <Linkedin />
-                </a>
-                <a href="#">
-                  <Link2 />
-                </a>
+
+            <div className="flex items-center mt-10">
+              <a href="#" className="flex items-center">
+                <ArrowLeft className="mr-4" />
+                <span className="text-sm">
+                  Volver al inicio
+                </span>
+              </a>
+
+              <div className="flex-1"></div>
+
+              <div className="flex items-center text-white">
+                <span className="mr-4 text-sm">
+                  Compartir en
+                </span>
+                <div className="flex space-x-3 items-center">
+                  <a href="#">
+                    <Facebook className="w-5 h-5" />
+                  </a>
+                  <a href="#">
+                    <Twitter className="w-5 h-5" />
+                  </a>
+                  <a href="#">
+                    <Linkedin className="w-5 h-5" />
+                  </a>
+                </div>
               </div>
             </div>
           </Container>
