@@ -28,7 +28,7 @@ export function LatestArticles ({
       }
       <div className="flex items-center justify-center my-10">
         <Link href="/blog">
-          <a className="text-lg font-semibold text-slate-400">
+          <a className="text-lg font-semibold dark:text-gray-400">
             Ver todos los articulos
           </a>
         </Link>

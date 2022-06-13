@@ -18,7 +18,7 @@ export function HomeLayout ({
 }) {
   return (
     <>
-      <div className="selection:bg-blue-600 selection:text-white min-h-screen bg-gray-800 text-white leading-7">
+      <div className="selection:bg-blue-600 selection:text-white min-h-screen bg-slate-200 dark:bg-gray-800 text-black dark:text-white leading-7">
         <Header>
           <Container className="flex flex-col md:flex-row md:items-center">
             <div className="md:order-2 flex justify-center mb-10 md:mb-0">
@@ -27,7 +27,7 @@ export function HomeLayout ({
             <div className="flex-1"></div>
             <div className="md:pr-20 text-center md:text-left">
               <Heading size="huge" className="leading-snug mb-4 font-extrabold">
-                Hi, I am Greg. <span className="text-slate-400">I build things for web.</span>
+                Hi, I am Greg. <span className="text-slate-500 dark:text-gray-400">I build things for web.</span>
               </Heading>
               <Text>
                 Soy un desarrollador web fronted expecializado en React con +5 años de experiencia creando soluciones extraordinarias para problemas ordinarios.
@@ -39,7 +39,7 @@ export function HomeLayout ({
           </Container>
         </Header>
 
-        <main className="bg-gray-900 text-white">
+        <main className="bg-white dark:bg-gray-900 dark:text-white">
           <Container>
             {children}
 

@@ -66,7 +66,7 @@ export function Skills () {
       <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-6">
         {
           skills.map(({ name, Icon }) => (
-            <div key={name} className="px-2 bg-gray-800 py-6 text-center border border-dotted border-gray-600 rounded-lg">
+            <div key={name} className="px-2 bg-slate-200 dark:bg-gray-800 py-6 text-center border border-dotted border-slate-400 dark:border-gray-600 rounded-lg">
               <div className="flex items-center justify-center w-10 h-10 mx-auto mb-4">
                 <Icon />
               </div>

@@ -25,10 +25,10 @@ function Project ({
   image
 }: ProjectProps) {
   return (
-    <div className="md:flex md:items-center bg-gray-800 border border-dotted border-gray-600 rounded-lg overflow-hidden mb-8">
+    <div className="md:flex md:items-center bg-slate-200 dark:bg-gray-800 border border-dotted border-slate-400 dark:border-gray-600 rounded-lg mb-8">
       <div className="md:w-1/2">
         <a href="#">
-          <img src={image} alt="" />
+          <img src={image} className="rounded-lg" alt="" />
         </a>
       </div>
       <div className="p-6 md:w-1/2">
@@ -76,6 +76,12 @@ export function Projects () {
         title="Dolor consequuntur aspernatur optio a"
         description="Dolor adipisicing explicabo provident totam reiciendis Dolorum ab iusto minus!"
         image="/images/02.png"
+      />
+
+      <Project
+        title="Dolor consequuntur aspernatur optio a"
+        description="Dolor adipisicing explicabo provident totam reiciendis Dolorum ab iusto minus!"
+        image="/images/03.png"
       />
     </>
   )

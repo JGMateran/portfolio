@@ -57,7 +57,7 @@ export default function Home ({ posts }: HomeProps) {
         <Heading size="big" as="h3" className="mb-2">
           Technologies
         </Heading>
-        <Heading as="h4" size="small" className="text-slate-400">
+        <Heading as="h4" size="small" className="text-slate-500 dark:text-gray-400">
           that I know
         </Heading>
       </Container>
@@ -72,7 +72,7 @@ export default function Home ({ posts }: HomeProps) {
         <Heading size="big" as="h3" className="mb-2">
           Latest articles (in spanish)
         </Heading>
-        <Heading as="h4" size="small" className="text-slate-400">
+        <Heading as="h4" size="small" className="text-slate-500 dark:text-gray-400">
           Prepared especially for you.
         </Heading>
       </Container>

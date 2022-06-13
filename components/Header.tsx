@@ -12,13 +12,13 @@ export function Header ({
       <Navbar />
 
       <div className="pb-14 py-4">
-        <div className="h-14 bg-gray-800 sticky top-0 z-10"></div>
+        <div className="h-14 bg-slate-200 dark:bg-gray-800 sticky top-0 z-10"></div>
         <div>
           {children}
         </div>
       </div>
 
-      <div className="h-14 bg-gray-900 sticky top-0 z-10"></div>
+      <div className="h-14 bg-white dark:bg-gray-900 sticky top-0 z-10"></div>
     </>
   )
 }

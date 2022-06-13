@@ -23,7 +23,7 @@ export function Button <T extends ElementType> (
   const classes = clsx(
     {
       'hover:cursor-pointer leading-none py-3 px-4 rounded-md inline-block bg-blue-600 text-white font-semibold shadow-lg shadow-blue-600/20 text-sm active:scale-95 focus-visible:ring-2 focus:outline-none': variant === 'normal',
-      'border-2 border-white font-semibold leading-none py-3 px-4 rounded-md text-sm active:scale-95 focus:outline-none focus-visible:bg-white/5': variant === 'outlined'
+      'border-2 border-black dark:border-white font-semibold leading-none py-3 px-4 rounded-md text-sm active:scale-95 focus:outline-none focus-visible:bg-white/5': variant === 'outlined'
     },
     className
   )
