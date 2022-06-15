@@ -21,10 +21,10 @@ export function BlogLayout ({
 }) {
   return (
     <>
-      <div className="selection:bg-blue-600 selection:text-white min-h-screen bg-gray-800 text-white leading-7">
+      <div className="selection:bg-blue-600 selection:text-white min-h-screen dark:bg-gray-800 bg-slate-200 dark:text-white leading-7">
         <Header>
           <Container>
-            <Heading size="big" className="mb-4 leading-snug">
+            <Heading size="big" className="mb-4 leading-10">
               Las crueles desventuras de un desarrollador de software
             </Heading>
             <Text>
@@ -41,7 +41,7 @@ export function BlogLayout ({
 
               <div className="flex-1"></div>
 
-              <div className="flex items-center text-white">
+              <div className="flex items-center">
                 <span className="mr-4 text-sm">
                   Compartir en
                 </span>
@@ -61,7 +61,7 @@ export function BlogLayout ({
           </Container>
         </Header>
 
-        <main className="bg-gray-900 text-white">
+        <main className="dark:bg-gray-900 dark:text-white min-h-screen bg-white">
           <Container>
             {children}
 

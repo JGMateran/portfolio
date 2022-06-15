@@ -13,11 +13,9 @@ export default function PostPage ({ post }: { post: Post }) {
 
   return (
     <BlogLayout>
-      <div className="min-h-screen">
-        <div className="prose dark:prose-dark w-full mx-auto max-w-full">
-          <h2>{post.title}</h2>
-          <MDXContent components={components} />
-        </div>
+      <div className="prose dark:prose-dark w-full mx-auto max-w-full">
+        <h2>{post.title}</h2>
+        <MDXContent components={components} />
       </div>
     </BlogLayout>
   )

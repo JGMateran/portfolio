@@ -8,7 +8,7 @@ import { DarkmodeButton } from '@/components/DarkmodeButton'
 
 export function Footer () {
   return (
-    <div className="flex items-center my-20 text-black dark:text-white">
+    <div className="flex items-center my-14 text-black dark:text-white">
       <div className="flex items-center">
         <span className="mr-4 text-sm uppercase text-slate-800 dark:text-gray-100">
           Follow me on

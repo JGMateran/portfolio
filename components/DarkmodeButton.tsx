@@ -13,7 +13,7 @@ function DarkModeSwitch ({
   return (
     <button
       onClick={onClick}
-      className="dark:bg-blue-500 bg-slate-600 dark:shadow-lg dark:shadow-blue-600/30 focus:outline-none focus-visible:ring-2 w-10 h-6 p-1 rounded-full duration-150 hover:cursor-pointer"
+      className="dark:bg-blue-500 bg-slate-500 dark:shadow-lg dark:shadow-blue-600/30 focus:outline-none focus-visible:ring-2 w-10 h-6 p-1 rounded-full duration-150 hover:cursor-pointer"
     >
       <div
         className="dark:translate-x-full w-4 h-4 bg-white rounded-full duration-150"
