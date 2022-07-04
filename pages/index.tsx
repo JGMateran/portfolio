@@ -12,7 +12,6 @@ import { Divider } from '@/components/Divider'
 import { Container } from '@/components/Container'
 import { Heading } from '@/components/Heading'
 import { Text } from '@/components/Text'
-import { ContactForm } from '@/components/ContactForm'
 import { HomeLayout } from '@/layouts/HomeLayout'
 import { LatestArticles } from '@/components/LatestArticles'
 import { Projects } from '@/components/Projects'
@@ -53,33 +52,10 @@ export default function Home ({ posts }: HomeProps) {
 
       <Divider />
 
-      <Container className="text-center mb-8 my-14" gap={false} size="small">
-        <Heading size="big" as="h3" className="mb-2">
-          Technologies
-        </Heading>
-        <Heading as="h4" size="small" className="text-slate-500 dark:text-gray-400">
-          that I know
-        </Heading>
-      </Container>
-
       <Skills />
-      <Divider />
-
       <Projects />
-      <Divider />
-
-      <Container className="text-center mb-8" gap={false} size="small">
-        <Heading size="big" as="h3" className="mb-2">
-          Latest articles (in spanish)
-        </Heading>
-        <Heading as="h4" size="small" className="text-slate-500 dark:text-gray-400">
-          Prepared especially for you.
-        </Heading>
-      </Container>
 
       <LatestArticles articles={posts} />
-
-      <ContactForm />
     </HomeLayout>
   )
 }

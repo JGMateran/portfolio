@@ -22,6 +22,10 @@ import { JestIcon } from '@/components/Icon/JestIcon'
 import { useState } from 'react'
 import { Button } from '@/components/Button'
 
+import { Heading } from '@/components/Heading'
+import { Container } from '@/components/Container'
+import { Divider } from '@/components/Divider'
+
 const allSkills = [
   {
     name: 'HTML',
@@ -106,6 +110,15 @@ export function Skills () {
 
   return (
     <>
+      <Container className="text-center mb-8 my-14" gap={false} size="small">
+        <Heading size="big" as="h3" className="mb-2">
+          Technologies
+        </Heading>
+        <Heading as="h4" size="small" className="text-slate-500 dark:text-gray-400">
+          that I know
+        </Heading>
+      </Container>
+
       <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-6">
         {
           skills.map(({ name, icon: Icon }) => (
@@ -129,6 +142,8 @@ export function Skills () {
           )
         }
       </div>
+
+      <Divider />
     </>
   )
 }

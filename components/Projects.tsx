@@ -2,6 +2,7 @@ import type { ReactNode } from 'react'
 
 import { Heading } from '@/components/Heading'
 import { Text } from '@/components/Text'
+import { Divider } from '@/components/Divider'
 
 import { GitHub, ExternalLink } from 'react-feather'
 
@@ -128,6 +129,8 @@ export function Projects () {
           Ver todos los proyectos
         </a>
       </div>
+
+      <Divider />
     </>
   )
 }
