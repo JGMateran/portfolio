@@ -114,6 +114,8 @@ const projects: ProjectTypes[] = [
 export function Projects () {
   return (
     <>
+      <Divider />
+
       <Heading size="big" className="text-center mb-8">
         Personal projects
       </Heading>
@@ -129,8 +131,6 @@ export function Projects () {
           Ver todos los proyectos
         </a>
       </div>
-
-      <Divider />
     </>
   )
 }

@@ -2,13 +2,15 @@ import type { FormEvent } from 'react'
 
 import { useForm, ValidationError } from '@formspree/react'
 
+import { ArrowRight } from 'react-feather'
+
 import { Container } from '@/components/Container'
 import { Input } from '@/components/Input'
 import { Button } from '@/components/Button'
 import { Heading } from '@/components/Heading'
 import { Text } from '@/components/Text'
 import { Social } from '@/components/Social'
-import { ArrowRight } from 'react-feather'
+import { Divider } from '@/components/Divider'
 
 export function ContactForm () {
   const [state, onSubmit] = useForm('xnqwobwa')

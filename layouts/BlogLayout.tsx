@@ -64,10 +64,8 @@ export function BlogLayout ({
         <main className="dark:bg-gray-900 dark:text-white min-h-screen bg-white">
           <Container>
             {children}
-
-            <Divider />
-            <Footer />
           </Container>
+          <Footer />
         </main>
       </div>
     </>

@@ -3,9 +3,9 @@ import type { Post } from 'contentlayer/generated'
 import Link from 'next/link'
 
 import { Article } from '@/components/Article'
-import { Divider } from '@/components/Divider'
 import { Container } from '@/components/Container'
 import { Heading } from '@/components/Heading'
+import { Divider } from '@/components/Divider'
 
 type LatestArticlesProps = {
   articles: Post[]
@@ -16,6 +16,7 @@ export function LatestArticles ({
 }: LatestArticlesProps) {
   return (
     <>
+      <Divider />
       <Container className="text-center mb-8" gap={false} size="small">
         <Heading size="big" as="h3" className="mb-2">
           Latest articles (in spanish)

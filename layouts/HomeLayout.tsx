@@ -42,10 +42,9 @@ export function HomeLayout ({
         <main className="bg-white dark:bg-gray-900 dark:text-white">
           <Container>
             {children}
-
-            <Divider />
-            <Footer />
           </Container>
+
+          <Footer />
         </main>
       </div>
     </>

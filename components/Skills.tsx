@@ -142,8 +142,6 @@ export function Skills () {
           )
         }
       </div>
-
-      <Divider />
     </>
   )
 }
