@@ -10,7 +10,6 @@ import { Button } from '@/components/Button'
 import { Heading } from '@/components/Heading'
 import { Text } from '@/components/Text'
 import { Social } from '@/components/Social'
-import { Divider } from '@/components/Divider'
 
 export function ContactForm () {
   const [state, onSubmit] = useForm('xnqwobwa')

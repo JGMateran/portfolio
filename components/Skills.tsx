@@ -1,5 +1,3 @@
-import type { ReactNode } from 'react'
-
 import { GitIcon } from '@/components/Icon/GitIcon'
 import { HTMLIcon } from '@/components/Icon/HTMLIcon'
 import { JavaScriptIcon } from '@/components/Icon/JavaScriptIcon'
@@ -24,7 +22,6 @@ import { Button } from '@/components/Button'
 
 import { Heading } from '@/components/Heading'
 import { Container } from '@/components/Container'
-import { Divider } from '@/components/Divider'
 
 const allSkills = [
   {
