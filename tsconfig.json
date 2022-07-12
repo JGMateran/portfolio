@@ -20,7 +20,8 @@
       "@/components/*": ["components/*"],
       "@/pages/*": ["pages/*"],
       "@/layouts/*": ["layouts/*"],
-      "@/hooks/*": ["hooks/*"]
+      "@/hooks/*": ["hooks/*"],
+      "@/lib/*": ["lib/*"],
     }
   },
   "include": [

@@ -3,6 +3,8 @@ import { GetStaticProps } from 'next'
 import type { Post } from 'contentlayer/generated'
 import { allPosts } from 'contentlayer/generated'
 
+import Link from 'next/link'
+
 import { Skills } from '@/components/Skills'
 import { Divider } from '@/components/Divider'
 import { Container } from '@/components/Container'
@@ -53,9 +55,11 @@ export default function Home ({ posts }: HomeProps) {
             <Divider />
             <Articles data={posts} />
             <div className="my-14 text-center">
-              <a href="#">
-                Ver todos los articulos
-              </a>
+              <Link href="/blog">
+                <a href="#">
+                  Ver todos los articulos
+                </a>
+              </Link>
             </div>
           </>
         )

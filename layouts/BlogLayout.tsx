@@ -10,14 +10,31 @@ import {
 import { Header } from '@/components/Header'
 import { Container } from '@/components/Container'
 import { Heading } from '@/components/Heading'
-import { Divider } from '@/components/Divider'
 import { Footer } from '@/components/Footer'
 import { Text } from '@/components/Text'
 
+function shareOnFacebookUrl (url: string) {
+  return `https://www.facebook.com/sharer.php?u=${url}`
+}
+
+function shareOnTwitterUrl (url: string) {
+  return `https://twitter.com/intent/tweet?url=${url}`
+}
+
+function shareOnLinkedinUrl (url: string) {
+  return `https://www.linkedin.com/shareArticle?url=${url}`
+}
+
 export function BlogLayout ({
-  children
+  children,
+  title,
+  description,
+  url
 }: {
-  children: ReactNode
+  children: ReactNode,
+  title: string,
+  description: string,
+  url: string
 }) {
   return (
     <>
@@ -25,10 +42,10 @@ export function BlogLayout ({
         <Header>
           <Container>
             <Heading size="big" className="mb-4 leading-10">
-              Las crueles desventuras de un desarrollador de software
+              {title}
             </Heading>
             <Text>
-              Adipisicing officia deserunt nulla consectetur beatae voluptates? Minus quo odio expedita maiores ab. Consequuntur beatae quo eum deserunt aliquid? Ea voluptatum enim voluptas consequatur recusandae fuga iste Incidunt eaque sed
+              {description}
             </Text>
 
             <div className="flex items-center mt-10">
@@ -46,13 +63,13 @@ export function BlogLayout ({
                   Compartir en
                 </span>
                 <div className="flex space-x-3 items-center">
-                  <a href="#">
+                  <a href={shareOnFacebookUrl(url)}>
                     <Facebook className="w-5 h-5" />
                   </a>
-                  <a href="#">
+                  <a href={shareOnTwitterUrl(url)}>
                     <Twitter className="w-5 h-5" />
                   </a>
-                  <a href="#">
+                  <a href={shareOnLinkedinUrl(url)}>
                     <Linkedin className="w-5 h-5" />
                   </a>
                 </div>

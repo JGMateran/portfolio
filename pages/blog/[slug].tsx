@@ -6,15 +6,20 @@ import { useMDXComponent } from 'next-contentlayer/hooks'
 
 import { BlogLayout } from '@/layouts/BlogLayout'
 
+import { HOME_URL } from '@/lib/constants'
+
 const components = {}
 
 export default function PostPage ({ post }: { post: Post }) {
   const MDXContent = useMDXComponent(post.body.code)
 
   return (
-    <BlogLayout>
+    <BlogLayout
+      title={post.title}
+      description={post.description}
+      url={`${HOME_URL}/blog/${post.slug}`}
+    >
       <div className="prose dark:prose-dark w-full mx-auto max-w-full">
-        <h2>{post.title}</h2>
         <MDXContent components={components} />
       </div>
     </BlogLayout>
