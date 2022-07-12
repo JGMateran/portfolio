@@ -20,7 +20,6 @@ import { JestIcon } from '@/components/Icon/JestIcon'
 import { useState } from 'react'
 import { Button } from '@/components/Button'
 
-import { Heading } from '@/components/Heading'
 import { Container } from '@/components/Container'
 
 const allSkills = [

@@ -7,6 +7,7 @@ export function MainPhoto () {
         src="/images/face.jpeg"
         width="240"
         height="240"
+        alt="José Gregorio Materán"
       />
     </div>
   )

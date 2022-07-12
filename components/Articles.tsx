@@ -3,8 +3,6 @@ import { Box } from '@/components/Box'
 
 import { format, parseISO } from 'date-fns'
 
-import { Divider } from '@/components/Divider'
-
 import Link from 'next/link'
 
 function formatDate (date: string) {
