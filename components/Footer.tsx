@@ -13,7 +13,6 @@ export function Footer () {
   return (
     <>
       <Container>
-        <Divider />
         <ContactForm />
       </Container>
 

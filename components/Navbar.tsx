@@ -15,7 +15,7 @@ export function Navbar () {
         <div className="flex items-center text-sm space-x-4 dark:text-gray-300 text-black">
           <Anchor href="/blog">Blog</Anchor>
           <Anchor href="/projects">Projects</Anchor>
-          <Anchor href="/#contact">Contact me</Anchor>
+          <Anchor href="#contact">Contact me</Anchor>
         </div>
       </Container>
     </div>
