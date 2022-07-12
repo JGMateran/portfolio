@@ -18,8 +18,8 @@ export function Footer () {
 
       <Container>
         <Divider />
-        <div className="flex items-center my-14 text-black dark:text-white">
-          <div className="flex items-center">
+        <div className="flex sm:flex-row flex-col items-center my-14 text-black dark:text-white">
+          <div className="flex items-center sm:mb-0 mb-6">
             <span className="mr-4 text-sm uppercase text-slate-800 dark:text-gray-100">
               Follow me on
             </span>

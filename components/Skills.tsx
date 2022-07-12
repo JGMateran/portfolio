@@ -122,7 +122,7 @@ export function Skills () {
               <div className="flex items-center justify-center w-10 h-10 mx-auto mb-4">
                 <Icon />
               </div>
-              <p className="text-sm font-semibold">
+              <p className="text-sm font-semibold truncate">
                 {name}
               </p>
             </div>
