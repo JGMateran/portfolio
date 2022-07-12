@@ -26,7 +26,7 @@ export function Heading <T extends ValidHeadings> (
   } = props
 
   const classes = clsx(
-    'text-4xl font-bold',
+    'font-bold',
     {
       'text-xl': size === 'small',
       'text-2xl': size === 'large',

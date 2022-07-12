@@ -94,21 +94,21 @@ const projects: ProjectTypes[] = [
       'Vite',
       'TailwindCSS'
     ]
-  },
-  {
-    id: 2,
-    title: 'Open-Source URL Shortener',
-    description: 'A simple tool to shorten URLs.',
-    image: '/images/03.png',
-    url: '#',
-    github: '#',
-    technologies: [
-      'React',
-      'Next.js',
-      'TailwindCSS',
-      'Supabase'
-    ]
   }
+  // {
+  //   id: 2,
+  //   title: 'Open-Source URL Shortener',
+  //   description: 'A simple tool to shorten URLs.',
+  //   image: '/images/03.png',
+  //   url: '#',
+  //   github: '#',
+  //   technologies: [
+  //     'React',
+  //     'Next.js',
+  //     'TailwindCSS',
+  //     'Supabase'
+  //   ]
+  // }
 ]
 
 export function Projects () {
@@ -125,12 +125,6 @@ export function Projects () {
           <Project key={id} {...rest} />
         ))
       }
-
-      <div className="text-center mt-10 mb-14">
-        <a href="#" className="font-semibold">
-          Ver todos los proyectos
-        </a>
-      </div>
     </>
   )
 }

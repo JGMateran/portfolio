@@ -1,5 +1,37 @@
-export default function BlogPage () {
+import type { GetStaticProps } from 'next'
+
+import type { Post } from 'contentlayer/generated'
+import { allPosts } from 'contentlayer/generated'
+
+import { Layout } from '@/layouts/Layout'
+import { Articles } from '@/components/Articles'
+
+function sortByPostDate (a: Post, b: Post) {
+  return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+}
+
+export const getStaticProps: GetStaticProps = (context) => {
+  const posts = allPosts.sort(sortByPostDate)
+
+  return {
+    props: {
+      posts
+    }
+  }
+}
+
+export default function BlogPage ({
+  posts
+}: {
+  posts: Post[]
+}) {
   return (
-    <h2>Blog page</h2>
+    <Layout>
+      {
+        posts.length === 0
+          ? <h2 className="text-2xl font-bold">No articles yet</h2>
+          : <Articles data={posts} />
+      }
+    </Layout>
   )
 }

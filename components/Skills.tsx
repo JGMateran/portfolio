@@ -108,12 +108,12 @@ export function Skills () {
   return (
     <>
       <Container className="text-center mb-8 my-14" gap={false} size="small">
-        <Heading size="big" as="h3" className="mb-2">
+        <h2 className="text-3xl font-bold mb-2 text-center">
           Technologies
-        </Heading>
-        <Heading as="h4" size="small" className="text-slate-500 dark:text-gray-400">
-          that I know
-        </Heading>
+        </h2>
+        <h4 className="mb-14 text-xl text-gray-100 text-center">
+          I have worked with
+        </h4>
       </Container>
 
       <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-6">

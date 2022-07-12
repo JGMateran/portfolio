@@ -34,6 +34,10 @@ const Blog = defineDocumentType(() => ({
     publishedAt: {
       type: 'string',
       required: true
+    },
+    description: {
+      type: 'string',
+      required: true
     }
   },
   computedFields

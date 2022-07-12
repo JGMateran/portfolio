@@ -10,22 +10,26 @@ import { Text } from '@/components/Text'
 import { Social } from '@/components/Social'
 
 import { Box } from '@/components/Box'
+import { Divider } from '@/components/Divider'
 
 export function ContactForm () {
   const [state, handleSubmit] = useForm('xnqwobwa')
 
   if (state.succeeded) {
     return (
-      <Container size="small" gap={false}>
-        <Box className="p-10">
-          <h2 className="text-3xl font-bold mb-4">
-            Successfully sent
-          </h2>
-          <Text>
-            Thank you very much for contacting me, I will get back to you as soon as possible.
-          </Text>
-        </Box>
-      </Container>
+      <>
+        <Divider />
+        <Container size="small" gap={false}>
+          <Box className="p-10">
+            <h2 className="text-3xl font-bold mb-4">
+              Successfully sent
+            </h2>
+            <Text>
+              Thank you very much for contacting me, I will get back to you as soon as possible.
+            </Text>
+          </Box>
+        </Container>
+      </>
     )
   }
 
@@ -53,6 +57,7 @@ export function ContactForm () {
             placeholder="john@doe.com"
             type="email"
             name="email"
+            required={true}
           />
           <ValidationError
             prefix="Email"
@@ -66,6 +71,7 @@ export function ContactForm () {
             as="textarea"
             className="h-36 resize-none"
             name="message"
+            required={true}
           />
           <ValidationError
             prefix="Message"

@@ -30,7 +30,7 @@ export function HomeLayout ({
                 Hi, I am Greg. <span className="text-slate-500 dark:text-gray-200">I build things for web.</span>
               </Heading>
               <Text>
-                Soy un desarrollador web fronted expecializado en React con +5 años de experiencia creando soluciones extraordinarias para problemas ordinarios.
+                I am a front-end web developer specialized in the React and TypeScript ecosystem with more than 5 years of experience building digital products.
               </Text>
               <div className="flex md:justify-start justify-center mt-6">
                 <Social />
