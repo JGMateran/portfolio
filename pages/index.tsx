@@ -30,6 +30,15 @@ export default function Home ({ posts }: HomeProps) {
       <NextSeo
         title="José Gregorio Materán | Frontend web developer"
         description="I am a front-end web developer specialized in the React and TypeScript ecosystem with more than 5 years of experience building digital products."
+        openGraph={{
+          images: [
+            {
+              url: '/images/website.png',
+              width: 1200,
+              height: 630
+            }
+          ]
+        }}
       />
 
       <Container className="text-center" gap={false} size="small">
