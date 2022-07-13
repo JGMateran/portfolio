@@ -1,0 +1,61 @@
+---
+title: "How I build my website"
+publishedAt: "2022-07-12"
+description: "A few months ago I decide to make a website, in the programming world having a portfolio is one of most important things that every developer must to have, so I decide not to waste any more time and started with the aventure."
+---
+## Motivation
+
+I think all of us developers have a lot of interesting ideas that we should be sharing in the world, so a blog is one of the most effective ways to do that.
+
+One of the things that held me back from starting to make the portfolio was the overwhelming idea that there were so many things to consider. Decisions such as what language to write it in were a dilemma (because my mother tongue is Spanish, and in the end, I decide to write it entirely in English)
+
+Another important thing I had to decide was which stack to use for the blog because I wanted a place to share my ideas, my website is my place in the world and to be comfortable with it I also wanted it to have a place to express my ideas and contribute to the community. So after months of thinking about it (yes, months), I decide everything you will see below.
+
+## The framework
+I am a developer with a lot of experience with React, so I thought I'd use a React framework. I like Vite a lot but Vite was not the right technology for this project, mainly because of the SEO.
+
+My second choice was to useto  Astro, but (at the time I decided to make the blog) I considered that it was not mature yet. Today Astro is a great option to do this project efficiently.
+
+So in the end I decide to go with Next.js, since it is a very powerful framework and I already have a lot of experience using it. While I was developing the project for a moment as I was starting to like Astro more and more I was thinking about migrating it, but there was a reason why i didn't do it, and that reason is called **Contentlayer** (I'll talk about it below)
+
+## Serverless Platform
+
+Since I am using Next.js I decided to use **Vercel** as a Serverless Platform because it is the company that develops Next.js, there is not much to say about it, I want to believe that they will always be one step ahead with compatibility with the new features of Next.js
+
+## Styles 
+
+I knew from the beginning that I was going to use **TailwindCSS** but why? Because TailwindCSS is perfect to create a project quickly, I think that it is not the best option for a large project that must be maintained for years, but for **Side Projects** TailwindCSS is perfect.
+
+I would not choose to use TailwindCSS for a large project or one that has to be maintained for years, mainly because it is expensive to maintain, and there is also the possibility that new technologies will be developed that will make TailwindCSS obsolete and have to be fully migrated.
+
+For Side Projects or Landing Pages, I think it is perfect, they are (usually) small pages and in case of migrating it does not represent a great cost.
+
+Another benefit that TailwindCSS has is that it gives you the possibility to create a project from scratch without the pain of starting the project from scratch, and they make it easier for you to do a thing that takes time with pure CSS like dark mode or responsive design.
+
+## Contact form
+
+I don't understand why some people continue to use ``<a href="mailto:your@email.com">`` I don't know anyone has clicked on a link from that, opened their mail manager, and send an email and probably you don't either.
+
+I think that having a fast and comfortable way for your potential clients to contact you is something very important that you should have on your website.
+
+In my case, to create the contact form I used **Formspree** because it is easy to integrate into your application and it has a very good free plan.
+
+If you are using **Netlify** the best option for you would be to use **Netlify Forms** I am using Vercel but if I were using Netlify I would use Netlify Forms.
+
+## The blog 
+
+The simple fact of creating a blog from scratch is already an overwhelming idea, today there are hundreds of tools for creating blogs, but I possibility the "easiest" way is to use markdown.
+
+But not any type of markdown, specifically we will use **MDX** which is a markdown with **JSX**. Many libraries allow you to use MDX but the one I consider to be the best is **Contentlayer** and it is the one I use for this project.
+
+One of the things I liked the most about Contentlayer is that you can easily add **remark** and **rehype** plugins, that's something that no other library has been able to integrate easily.
+
+## Summary
+
+* Next.js as the framework
+* Vercel as Serverless Platform 
+* TailwindCSS for styles
+* Formspree for the contact form
+* Contentlayer for the content
+
+They were months of a lot of work but I think it was all worth it in the end, it is an experience that I recommend to everyone.

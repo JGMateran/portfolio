@@ -8,7 +8,7 @@ import Document, {
 export default class MyDocument extends Document {
   render () {
     return (
-      <Html>
+      <Html lang="es">
         <Head>
           <link rel="icon" href="/images/favicon.svg" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />

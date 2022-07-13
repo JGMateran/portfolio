@@ -47,6 +47,9 @@ module.exports = {
             },
             'ol,ul': {
               color: theme('colors.slate.300')
+            },
+            'strong,code': {
+              color: theme('colors.white')
             }
           }
         }

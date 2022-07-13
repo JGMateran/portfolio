@@ -1,5 +1,7 @@
 import { ReactNode } from 'react'
 
+import Link from 'next/link'
+
 import {
   Facebook,
   Linkedin,
@@ -49,27 +51,29 @@ export function BlogLayout ({
             </Text>
 
             <div className="flex items-center mt-10">
-              <a href="#" className="flex items-center">
-                <ArrowLeft className="mr-4" />
-                <span className="text-sm">
-                  Volver al inicio
-                </span>
-              </a>
+              <Link href="/">
+                <a href="#" className="flex items-center">
+                  <ArrowLeft className="mr-4" />
+                  <span className="text-sm">
+                    Back to home
+                  </span>
+                </a>
+              </Link>
 
               <div className="flex-1"></div>
 
               <div className="flex items-center">
                 <span className="mr-4 text-sm">
-                  Compartir en
+                  Share on
                 </span>
                 <div className="flex space-x-3 items-center">
-                  <a href={shareOnFacebookUrl(url)}>
+                  <a target="_blank" rel="noopener noreferrer" href={shareOnFacebookUrl(url)}>
                     <Facebook className="w-5 h-5" />
                   </a>
-                  <a href={shareOnTwitterUrl(url)}>
+                  <a target="_blank" rel="noopener noreferrer" href={shareOnTwitterUrl(url)}>
                     <Twitter className="w-5 h-5" />
                   </a>
-                  <a href={shareOnLinkedinUrl(url)}>
+                  <a target="_blank" rel="noopener noreferrer" href={shareOnLinkedinUrl(url)}>
                     <Linkedin className="w-5 h-5" />
                   </a>
                 </div>

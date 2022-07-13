@@ -53,7 +53,7 @@ export function ContactForm () {
 
         <form onSubmit={handleSubmit} method="POST">
           <Input
-            label="Correo electrónico"
+            label="Email"
             placeholder="john@doe.com"
             type="email"
             name="email"
@@ -66,7 +66,7 @@ export function ContactForm () {
           />
 
           <Input
-            label="Mensaje"
+            label="Message"
             placeholder="Hello, I would like to hire you for a job."
             as="textarea"
             className="h-36 resize-none"

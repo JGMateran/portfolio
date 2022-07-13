@@ -28,7 +28,7 @@ export default function Home ({ posts }: HomeProps) {
   return (
     <HomeLayout>
       <NextSeo
-        title="José Gregorio Materán"
+        title="José Gregorio Materán | Frontend web developer"
         description="I am a front-end web developer specialized in the React and TypeScript ecosystem with more than 5 years of experience building digital products."
       />
 
@@ -57,14 +57,13 @@ export default function Home ({ posts }: HomeProps) {
             <div className="my-14 text-center">
               <Link href="/blog">
                 <a href="#">
-                  Ver todos los articulos
+                  See all articles
                 </a>
               </Link>
             </div>
           </>
         )
       }
-
     </HomeLayout>
   )
 }

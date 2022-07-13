@@ -1,11 +1,10 @@
 import { ReactNode } from 'react'
 
 import {
-  Facebook,
-  Linkedin,
-  Twitter,
   ArrowLeft
 } from 'react-feather'
+
+import Link from 'next/link'
 
 import { Header } from '@/components/Header'
 import { Container } from '@/components/Container'
@@ -32,12 +31,14 @@ export function Layout ({
             </Text>
 
             <div className="flex items-center mt-10">
-              <a href="#" className="flex items-center">
-                <ArrowLeft className="mr-4" />
-                <span className="text-sm">
-                  Volver al inicio
-                </span>
-              </a>
+              <Link href="/">
+                <a className="flex items-center">
+                  <ArrowLeft className="mr-4" />
+                  <span className="text-sm">
+                    Back to home
+                  </span>
+                </a>
+              </Link>
             </div>
           </Container>
         </Header>

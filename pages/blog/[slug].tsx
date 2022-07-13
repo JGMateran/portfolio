@@ -1,6 +1,8 @@
 import type { GetStaticProps } from 'next'
 import type { Post } from 'contentlayer/generated'
 
+import { NextSeo } from 'next-seo'
+
 import { allPosts } from 'contentlayer/generated'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 
@@ -19,6 +21,10 @@ export default function PostPage ({ post }: { post: Post }) {
       description={post.description}
       url={`${HOME_URL}/blog/${post.slug}`}
     >
+      <NextSeo
+        title={post.title}
+        description={post.description}
+      />
       <div className="prose dark:prose-dark w-full mx-auto max-w-full">
         <MDXContent components={components} />
       </div>
