@@ -43,7 +43,7 @@ export default function Home ({ posts }: HomeProps) {
 
       <Container className="text-center" gap={false} size="small">
         <Heading size="big" as="h3" className="mb-4">
-          About me
+          Experience
         </Heading>
         <Text className="mb-4">
           Although I am currently focused on the React and TypeScript ecosystem I have done a bit of everything, I have created libraries to automate tedious processes and I have also been developing complex systems that are maintained for a long time.

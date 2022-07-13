@@ -5,8 +5,8 @@ export function JestIcon () {
     <Image
       src="/images/jest.png"
       alt="Jest"
-      width={40}
-      height={40}
+      width="40"
+      height="40"
     />
   )
 }

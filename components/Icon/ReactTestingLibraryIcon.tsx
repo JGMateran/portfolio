@@ -4,8 +4,8 @@ export function ReactTestingLibrary () {
   return (
     <Image
       src="/images/octopus.png"
-      width={40}
-      height={40}
+      width="40"
+      height="40"
       alt="Octopus"
     />
   )

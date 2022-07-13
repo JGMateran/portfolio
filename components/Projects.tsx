@@ -1,5 +1,7 @@
 import type { ReactNode } from 'react'
 
+import Image from 'next/image'
+
 import { Heading } from '@/components/Heading'
 import { Text } from '@/components/Text'
 import { Divider } from '@/components/Divider'
@@ -33,17 +35,26 @@ function Project ({
   technologies
 }: Omit<ProjectTypes, 'id'>) {
   return (
-    <div className="md:flex md:items-center bg-slate-200 dark:bg-gray-800 border border-dotted border-slate-400 dark:border-gray-600 rounded-lg mb-8">
+    <div className="md:flex md:items-center bg-slate-100 dark:bg-gray-800 border border-dotted border-slate-400 dark:border-gray-600 rounded-lg mb-8">
       <div className="md:w-1/2">
-        <a href={url} rel="noopener noreferrer" target="_blank">
-          <img src={image} className="rounded-lg" alt="" />
+        <a href={url} rel="noopener noreferrer" target="_blank" className="flex">
+          <Image
+            src={image}
+            className="rounded-lg"
+            width="695"
+            height="390"
+            alt={title}
+          />
         </a>
       </div>
       <div className="p-6 md:w-1/2">
         <div className="flex items-center mb-1">
-          <Heading size="small" className="flex-1 truncate">
-            {title}
-          </Heading>
+          <a href={url} rel="noopener noreferrer" target="_blank" className="truncate">
+            <Heading size="small" className="truncate">
+              {title}
+            </Heading>
+          </a>
+          <div className="flex-1"></div>
           <a href={github} className="ml-4" rel="noopener noreferrer" target="_blank">
             <GitHub className="w-5 h-5" />
           </a>
@@ -51,7 +62,7 @@ function Project ({
             <ExternalLink className="w-5 h-5" />
           </a>
         </div>
-        <Text className="text-sm leading-7 mb-3">
+        <Text className="line-clamp-3 text-sm leading-7 mb-3">
           {description}
         </Text>
         <div className="flex items-center space-x-2">
@@ -69,8 +80,8 @@ function Project ({
 const projects: ProjectTypes[] = [
   {
     id: 0,
-    title: 'Movie Search',
-    description: 'A search engine for movies.',
+    title: 'Movie Search Engine',
+    description: 'A movie search engine where you can get information about current movies, actors information, see the trailer an much more.',
     image: '/images/01.png',
     url: 'https://vite-tmdb-explorer.vercel.app/',
     github: 'https://github.com/JGMateran/tmdb-exporer',
@@ -83,8 +94,8 @@ const projects: ProjectTypes[] = [
   },
   {
     id: 1,
-    title: 'Beautifull Twitter Cards',
-    description: 'A simple tool to generate Twitter Cards.',
+    title: 'Beautiful Twitter Cards',
+    description: 'A tool to easily create modern and beautiful twitter cards to post on social network.',
     image: '/images/02.png',
     url: 'https://beautiful-twitter-cards.vercel.app/',
     github: 'https://github.com/JGMateran/beautiful-twitter-cards',

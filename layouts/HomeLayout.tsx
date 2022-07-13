@@ -2,14 +2,14 @@ import type {
   ReactNode
 } from 'react'
 
+import Image from 'next/image'
+
 import { Header } from '@/components/Header'
 import { Container } from '@/components/Container'
-import { MainPhoto } from '@/components/MainPhoto'
 import { Heading } from '@/components/Heading'
 import { Social } from '@/components/Social'
 import { Text } from '@/components/Text'
 import { Footer } from '@/components/Footer'
-import { Divider } from '@/components/Divider'
 
 export function HomeLayout ({
   children
@@ -22,7 +22,14 @@ export function HomeLayout ({
         <Header>
           <Container className="flex flex-col md:flex-row md:items-center">
             <div className="md:order-2 flex justify-center mb-10 md:mb-0">
-              <MainPhoto />
+              <div className="w-40 h-40 md:w-60 md:h-60 rounded-full rounded-full overflow-hidden">
+                <Image
+                  src="/images/face.jpeg"
+                  width="240"
+                  height="240"
+                  alt="José Gregorio Materán"
+                />
+              </div>
             </div>
             <div className="flex-1"></div>
             <div className="md:pr-20 text-center md:text-left">
