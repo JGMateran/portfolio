@@ -112,7 +112,7 @@ const projects: ProjectTypes[] = [
     description: 'A simple tool to shorten URLs.',
     image: '/images/03.png',
     url: 'https://reburn-link.vercel.app',
-    github: '#',
+    github: 'https://github.com/JGMateran/url-shortener',
     technologies: [
       'React',
       'Next.js',

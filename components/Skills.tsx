@@ -22,6 +22,8 @@ import { Button } from '@/components/Button'
 
 import { Container } from '@/components/Container'
 
+import { Divider } from '@/components/Divider'
+
 const allSkills = [
   {
     name: 'HTML',
@@ -106,11 +108,12 @@ export function Skills () {
 
   return (
     <>
+      <Divider />
       <Container className="text-center mb-8 my-14" gap={false} size="small">
         <h2 className="text-3xl font-bold mb-2 text-center">
           Technologies
         </h2>
-        <h4 className="mb-14 text-xl text-gray-100 text-center">
+        <h4 className="mb-14 text-xl dark:text-gray-100 text-gray-500 text-center">
           I have worked with
         </h4>
       </Container>
@@ -118,7 +121,7 @@ export function Skills () {
       <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-6">
         {
           skills.map(({ name, icon: Icon }) => (
-            <div key={name} className="px-2 bg-slate-200 dark:bg-gray-800 py-6 text-center border border-dotted border-slate-400 dark:border-gray-600 rounded-lg">
+            <div key={name} className="px-2 bg-slate-100 dark:bg-gray-800 py-6 text-center border border-dotted border-slate-400 dark:border-gray-600 rounded-lg">
               <div className="flex items-center justify-center w-10 h-10 mx-auto mb-4">
                 <Icon />
               </div>
