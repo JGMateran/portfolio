@@ -105,21 +105,21 @@ const projects: ProjectTypes[] = [
       'Vite',
       'TailwindCSS'
     ]
+  },
+  {
+    id: 2,
+    title: 'Open-Source URL Shortener',
+    description: 'A simple tool to shorten URLs.',
+    image: '/images/03.png',
+    url: 'https://reburn-link.vercel.app',
+    github: '#',
+    technologies: [
+      'React',
+      'Next.js',
+      'TailwindCSS',
+      'Supabase'
+    ]
   }
-  // {
-  //   id: 2,
-  //   title: 'Open-Source URL Shortener',
-  //   description: 'A simple tool to shorten URLs.',
-  //   image: '/images/03.png',
-  //   url: '#',
-  //   github: '#',
-  //   technologies: [
-  //     'React',
-  //     'Next.js',
-  //     'TailwindCSS',
-  //     'Supabase'
-  //   ]
-  // }
 ]
 
 export function Projects () {
