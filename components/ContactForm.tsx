@@ -1,9 +1,11 @@
-import { useForm, ValidationError } from '@formspree/react'
+import type { ReactNode } from 'react'
 
-import { ArrowRight } from 'react-feather'
+import { useForm as useFormpree } from '@formspree/react'
+import { useForm } from 'react-hook-form'
+
+import { ArrowRight, AlertCircle } from 'react-feather'
 
 import { Container } from '@/components/Container'
-import { Input } from '@/components/Input'
 import { Button } from '@/components/Button'
 import { Heading } from '@/components/Heading'
 import { Text } from '@/components/Text'
@@ -12,8 +14,29 @@ import { Social } from '@/components/Social'
 import { Box } from '@/components/Box'
 import { Divider } from '@/components/Divider'
 
+const VALID_EMAIL_REGEXP = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/
+
+type ContactData = {
+  email: string,
+  message: string
+}
+
+function Badge ({ children }: { children: ReactNode }) {
+  return (
+    <span className="p-4 justify-center text-sm flex items-center dark:text-white text-red-600">
+      <AlertCircle className="mr-3" /> {children}
+    </span>
+  )
+}
+
 export function ContactForm () {
-  const [state, handleSubmit] = useForm('xnqwobwa')
+  const [state, onSubmit] = useFormpree('xnqwobwa')
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm<ContactData>()
 
   if (state.succeeded) {
     return (
@@ -51,33 +74,40 @@ export function ContactForm () {
           <Social />
         </div>
 
-        <form onSubmit={handleSubmit} method="POST">
-          <Input
-            label="Email"
-            placeholder="john@doe.com"
-            type="email"
-            name="email"
-            required={true}
-          />
-          <ValidationError
-            prefix="Email"
-            field="email"
-            errors={state.errors}
-          />
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <label className="block mb-6">
+            <span className="block mb-2 text-sm font-bold">
+              Email
+            </span>
+            <input
+              type="text"
+              className="block p-3 border-2 rounded-md w-full dark:bg-gray-800 dark:focus:border-gray-500 focus:outline-none dark:border-gray-600 border-gray-100 focus:border-gray-200 bg-slate-100 placeholder-gray-500"
+              placeholder="john@doe.com"
+              {...register('email', {
+                required: true,
+                pattern: VALID_EMAIL_REGEXP
+              })}
+            />
 
-          <Input
-            label="Message"
-            placeholder="Hello, I would like to hire you for a job."
-            as="textarea"
-            className="h-36 resize-none"
-            name="message"
-            required={true}
-          />
-          <ValidationError
-            prefix="Message"
-            field="message"
-            errors={state.errors}
-          />
+            { errors.email?.type === 'required' && <Badge>Email required</Badge> }
+            { errors.email?.type === 'pattern' && <Badge>Must be a valid email</Badge> }
+          </label>
+
+          <label className="block mb-6">
+            <span className="block mb-2 text-sm font-bold">
+              Message
+            </span>
+            <textarea
+              className="block p-3 border-2 rounded-md w-full dark:bg-gray-800 dark:focus:border-gray-500 focus:outline-none dark:border-gray-600 border-gray-100 focus:border-gray-200 bg-slate-100 placeholder-gray-500 h-36 resize-none"
+              placeholder="Hello, I would like to hire you"
+              {...register('message', {
+                required: true
+              })}
+            />
+            {
+              errors.message?.type === 'required' && <Badge>Message required</Badge>
+            }
+          </label>
 
           <div className="flex justify-center">
             <Button
