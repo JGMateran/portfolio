@@ -20,7 +20,7 @@ type ProjectTypes = {
 
 function Badge ({ children }: { children: ReactNode }) {
   return (
-    <span className="inline-flex text-xs py-2 px-3 rounded-full border border-dotted border-gray-600">
+    <span className="mr-2 mb-2 inline-flex text-xs py-2 px-3 rounded-full border border-dotted border-gray-600">
       {children}
     </span>
   )
@@ -50,7 +50,7 @@ function Project ({
       <div className="p-6 md:w-1/2">
         <div className="flex items-center mb-1">
           <a href={url} rel="noopener noreferrer" target="_blank" className="truncate">
-            <Heading size="small" className="truncate">
+            <Heading size="small" className="truncate mt-2">
               {title}
             </Heading>
           </a>
@@ -62,10 +62,10 @@ function Project ({
             <ExternalLink className="w-5 h-5" />
           </a>
         </div>
-        <Text className="line-clamp-3 text-sm leading-7 mb-3">
+        <Text className="line-clamp-2 text-sm leading-7 mb-3">
           {description}
         </Text>
-        <div className="flex items-center space-x-2">
+        <div className="flex flex-wrap items-center">
           {
             technologies.map((technology, index) => (
               <Badge key={index}>{technology}</Badge>
@@ -86,7 +86,6 @@ const projects: ProjectTypes[] = [
     url: 'https://vite-tmdb-explorer.vercel.app/',
     github: 'https://github.com/JGMateran/tmdb-exporer',
     technologies: [
-      'React',
       'TypeScript',
       'Vite',
       'TailwindCSS'
@@ -100,8 +99,6 @@ const projects: ProjectTypes[] = [
     url: 'https://beautiful-twitter-cards.vercel.app/',
     github: 'https://github.com/JGMateran/beautiful-twitter-cards',
     technologies: [
-      'React',
-      'TypeScript',
       'Vite',
       'TailwindCSS'
     ]
@@ -114,7 +111,6 @@ const projects: ProjectTypes[] = [
     url: 'https://reburn-link.vercel.app',
     github: 'https://github.com/JGMateran/url-shortener',
     technologies: [
-      'React',
       'Next.js',
       'TailwindCSS',
       'Supabase'

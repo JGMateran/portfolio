@@ -118,7 +118,7 @@ export function Skills () {
         </h4>
       </Container>
 
-      <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
         {
           skills.map(({ name, icon: Icon }) => (
             <div key={name} className="px-2 bg-slate-100 dark:bg-gray-800 py-6 text-center border border-dotted border-slate-400 dark:border-gray-600 rounded-lg">
