@@ -8,7 +8,8 @@ type Articles = {
   publishedAt: string,
   readingTime: {
     text: string
-  }
+  },
+  image: string
 }
 
 export function ArticlesList ({
