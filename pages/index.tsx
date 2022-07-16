@@ -3,18 +3,15 @@ import { GetStaticProps } from 'next'
 import type { Post } from 'contentlayer/generated'
 import { allPosts } from 'contentlayer/generated'
 
-import Link from 'next/link'
+import { NextSeo } from 'next-seo'
 
 import { Skills } from '@/components/Skills'
-import { Divider } from '@/components/Divider'
 import { Container } from '@/components/Container'
 import { Heading } from '@/components/Heading'
 import { Text } from '@/components/Text'
 import { HomeLayout } from '@/layouts/HomeLayout'
-import { Articles } from '@/components/Articles'
 import { Projects } from '@/components/Projects'
-
-import { NextSeo } from 'next-seo'
+import { Articles } from '@/components/Articles'
 
 function sortByPostDate (a: Post, b: Post) {
   return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
@@ -53,26 +50,11 @@ export default function Home ({ posts }: HomeProps) {
         </Text>
       </Container>
 
-      <Divider />
       <Skills />
 
       <Projects />
 
-      {
-        posts.length > 0 && (
-          <>
-            <Divider />
-            <Articles data={posts} />
-            <div className="my-14 text-center">
-              <Link href="/blog">
-                <a href="#">
-                  See all articles
-                </a>
-              </Link>
-            </div>
-          </>
-        )
-      }
+      <Articles data={posts} />
     </HomeLayout>
   )
 }

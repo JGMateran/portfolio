@@ -38,6 +38,10 @@ const Blog = defineDocumentType(() => ({
     description: {
       type: 'string',
       required: true
+    },
+    image: {
+      type: 'string',
+      required: true
     }
   },
   computedFields

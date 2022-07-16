@@ -17,6 +17,7 @@ type ArticleProps = {
   title: string,
   description: string,
   publishedAt: string,
+  image: string,
   readingTime: {
     text: string
   }
@@ -29,7 +30,7 @@ export function ArticleItem (props: ArticleProps) {
         <a>
           <div className="relative w-full overflow-hidden pt-[100%]">
             <Image
-              src="/images/blog-01.jpg"
+              src={props.image}
               width="573"
               height="573"
               alt={props.title}
