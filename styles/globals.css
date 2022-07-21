@@ -79,6 +79,7 @@ code[class*="language-"] {
 
 .code-line {
 	display: block;
+	@apply pr-6;
 }
 
 .code-line.highlight-line::before,

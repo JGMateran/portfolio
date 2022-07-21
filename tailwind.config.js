@@ -33,7 +33,7 @@ module.exports = {
           css: {
             pre: {
               backgroundColor: theme('colors.slate.800'),
-              padding: '1.5rem 1.5rem 1.5rem 0'
+              padding: '1.5rem 0'
             }
           }
         },
