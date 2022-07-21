@@ -1,0 +1,308 @@
+---
+title: "How to build a React component with TailwindCSS"
+publishedAt: "2022-07-21"
+description: "Possibly you have felt overwhelmed when writing a TailwindCSS component, in this article I will teach you how to write a reusable component in a simple way."
+image: "/images/blog-2.jpg"
+---
+TailwindCSS is a great tool to create components and layouts in a fast way, without a doubt it is one of the best technologies to create your personal projects, but one of the big disadvantages of TailwindCSS is that in the long run it becomes very difficult to modify or maintain, so it is not a good option for projects that are large or maintained for many years.
+
+No doubt building a TailwindCSS project is fast, but everything in life has a cost, in the case of TailwindCSS it is readability. If you have built a medium sized project you will know that a component ends up with a large number of classes which makes it difficult to modify. 
+
+But that's what React is for. Sometimes when we are writing React code we forget that the greatest power the library has is the ability to separate everything into components and we end up using React as if it were a template.
+
+Today I'm going to explain how to create reusable React components with TailwindCSS so that they can be easily maintained.
+
+For this I am going to give you the typical example of the button
+
+```html
+<button class="h-10 text-sm px-4 rounded-md font-bold bg-blue-600 text-white">
+  Log In
+</button>
+```
+At the moment this button has few classes, so it can be easily read and easily maintained, but everyone who has written a TailwindCSS component before knows that buttons don't look like that, it has many more classes so it is an unrealistic example, but as an example let's say it only has those classes.
+
+To start we have to convert the button that is in HTML to JSX, this is very simple.
+
+```jsx
+function Button () {
+  return (
+    <button className="h-10 text-sm px-4 rounded-md font-bold bg-blue-600 text-white">
+      Log In
+    </button>
+  )
+}
+```
+Easy, isn't it? At the moment it can be read easily and for sure modifying it is just as easy. But nothing in life is that simple.
+
+In an application (usually) there is not only one type of button, what happens when we want to create a button with a different color?
+
+We may be tempted to repeat the code
+
+```jsx
+function Button () {
+  return (
+    <button className="h-10 text-sm px-4 rounded-md font-bold bg-blue-600 text-white">
+      Log In
+    </button>
+  )
+}
+
+function DangerButton () {
+  return (
+    <button className="h-10 text-sm px-4 rounded-md font-bold bg-red-600 text-white">
+      Log Out
+    </button>
+  )
+}
+```
+The only difference between both buttons is the background color, one has **bg-blue-600** and the other **bg-red-600**.
+
+We are separating the elements into components, but we are repeating code.
+
+A rule of thumb is that, in JavaScript, if two things are similar they can possibly be refactored.
+
+But how to do it?
+
+Using the variants. It is basically a strategy that consists of passing a property to the component where you tell it which of the two is.
+
+In this case you can pass a property called "variant" and change the color to red if it is "danger".
+
+```jsx
+function Button ({ 
+  variant = 'primary',
+  className
+}) {
+  return (
+    <button className={`h-10 text-sm px-4 rounded-md font-bold 
+      ${variant === 'danger' ? 'bg-red-600' : 'bg-blue-600'}
+      text-white`}
+    >
+      {className}
+    </button>
+  )
+}
+
+<Button>Log In</Button>
+<Button variant="danger">Log Out</Button>
+```
+That solves the problem of writing the same component twice just to change a class, but we fall into another problem that is not purely TailwindCSS, which is basically that React does not have a native way to work with classes in a readable way.
+
+React doesn't have a way to work with classes, but one thing React does have is a brilliant community.
+
+To solve React's problem with classes we are going to use a library called **clsx**.
+
+```bash
+npm install clsx
+
+yarn add clsx
+```
+I recommend you to read [their documentation](https://github.com/lukeed/clsx) before proceeding.
+
+But as a summary I will leave you with this.
+
+```js
+clsx('hello', 'world') // => 'hello world'
+
+clsx('hello world') // => 'hello world'
+
+clsx('hello', { 'world': false }) // => 'hello'
+
+clsx('hello', { 'world': true }) // => 'hello world'
+
+clsx('hello', { 'wonderful': true }, 'world') // => 'hello wonderful world'
+
+clsx('hello', { 'wonderful': false }, 'world') // => 'hello world'
+```
+This is all you need to know about clsx to continue reading this article.
+
+Taking into account the previous example we will write it using clsx.
+
+```jsx {7-11}
+function Button ({ 
+  variant = 'primary',
+  children
+}) {
+  return (
+    <button className={clsx(
+      'h-10 text-sm px-4 rounded-md font-bold bg-red-600 text-white',
+      {
+        'bg-red-600': variant === 'danger',
+        'bg-blue-600': variant === 'primary'
+      }
+    )}>
+      {children}
+    </button>
+  )
+}
+```
+With this we have solved a problem, now our component is a little better understood.
+
+Basically what we did was:
+* If the variant is "danger" add "bg-red-600".
+* If the variant is "primary" add "bg-blue-600".
+* By default it will be "primary".
+
+In a simplified way we can say that this is the same.
+
+```jsx
+const variant = 'primary'
+
+clsx({
+  'bg-blue-600': variant === 'primary',
+  'bg-red-600': variant === 'danger'
+})
+
+// => 'bg-blue-600'
+```
+
+Possibly at this point you are thinking that this is even more complicated than the previous way and that extra logic has been added for nothing.
+
+But the reality is that this code is even more maintainable, by doing the above we get components like this.
+
+```html
+<Button>Log In</Button>
+<Button variant="primary">Log In</Button>
+
+<Button variant="danger">Log Out</Button>
+```
+Now we can write the components in a better way, but the previous syntax can be a little confusing for many.
+
+Personally I am used to it and it is comfortable for me, but it can be confusing for those who just see it.
+
+Taking advantage of this fact I am going to try another way that you may like more and this is to separate the variants in objects. In such a way that it looks something like this. 
+
+```jsx {2-3, 6, 14-15}
+const variants = {
+  danger: 'bg-red-600',
+  primary: 'bg-blue-600'
+}
+
+const defaults = 'h-10 text-sm px-4 rounded-md font-bold bg-red-600 text-white'
+
+function Button ({ 
+  variant = 'primary',
+  children
+}) {
+  return (
+    <button className={clsx(
+      defaults,
+      variants[variant]
+    )}>
+      {children}
+    </button>
+  )
+}
+```
+
+Although somewhat complex, can be read in a simpler way.
+
+In JavaScript we can access an object also by its value in square brackets (as we do with arrays).
+
+```jsx
+const object = {
+  key: 'value'
+}
+
+object.key // => 'value'
+object['key'] // => 'value'
+```
+
+Therefore, something like this can be done.
+
+```js
+const variants = {
+  danger: 'bg-red-600',
+  primary: 'bg-blue-600'
+}
+
+variants['primary'] // => 'bg-blue-600'
+variants['danger'] // => 'bg-blue-600'
+```
+
+You can choose not to separate the variants in object or to do it, but when to do it?
+
+The golden rule is, separate it when you have many variants.
+
+An example would be if apart from the color you also have sizes.
+
+```jsx {3, 9, 16}
+const variants = ...
+
+const sizes = ...
+
+const defaults = ... 
+
+function Button ({ 
+  variant = 'primary',
+  size === 'small'
+  children
+}) {
+  return (
+    <button className={clsx(
+      defaults,
+      variants[variant],
+      sizes[size]
+    )}>
+      {children}
+    </button>
+  )
+}
+```
+
+So you can write components such as
+
+```html
+<Button>Log In</Button>
+<Button variant="danger">Log Out</Button>
+
+<Button size="small">Log In small</Button>
+<Button variant="danger" size="small">Log Out small</Button>
+```
+Undoubtedly this syntax is much easier to understand than using the utilities classes.
+
+But for this to be complete there is a small thing missing, which is the possibility of using the utilities classes in the components.
+
+This is done with a small modification.
+
+```jsx {11, 18}
+const variants = ...
+
+const sizes = ...
+
+const defaults = ... 
+
+function Button ({ 
+  variant = 'primary',
+  size === 'small'
+  children,
+  className
+}) {
+  return (
+    <button className={clsx(
+      defaults,
+      variants[variant],
+      sizes[size],
+      className
+    )}>
+      {children}
+    </button>
+  )
+}
+```
+
+Now the variants could be used with more utilities.
+
+```html {4}
+<Button 
+  variant="danger"
+  size="small"
+  className="mr-10"
+>
+  Log Out
+</Button>
+```
+Now you may be thinking "So why did we do all of the above to end up with the same thing?"
+
+But it's not the same thing. You must follow a golden rule. You can only add utility classes to customizable components if those classes do not modify the element.
+
+For example, we can add classes like ``m, my, mx`` (margin) because they modify the external elements, but we cannot add classes like ``p, px, py`` (padding) because they modify the element internally.
