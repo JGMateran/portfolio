@@ -83,5 +83,5 @@ code[class*="language-"] {
 
 .code-line.highlight-line::before,
 .code-line.highlight-line {
-	@apply bg-slate-700;
+	background-color: #293548;
 }

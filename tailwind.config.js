@@ -33,13 +33,13 @@ module.exports = {
           css: {
             pre: {
               backgroundColor: theme('colors.slate.800'),
-              padding: '1.5rem 0'
+              padding: '1.5rem 1.5rem 1.5rem 0'
             }
           }
         },
         dark: {
           css: {
-            'h1,h2,h3,h4,h5,h6': {
+            'h1,h2,h3,h4,h5,h6,a': {
               color: theme('colors.white')
             },
             p: {
