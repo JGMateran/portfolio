@@ -1,3 +1,5 @@
+import type { ComponentPropsWithoutRef } from 'react'
+
 import type { GetStaticProps } from 'next'
 import type { Post } from 'contentlayer/generated'
 
@@ -10,7 +12,37 @@ import { BlogLayout } from '@/layouts/BlogLayout'
 
 import { HOME_URL } from '@/lib/constants'
 
-const components = {}
+import Link from 'next/link'
+
+type AnchorProps = ComponentPropsWithoutRef<'a'> & {
+  href: string
+}
+
+function Anchor ({
+  href,
+  ...props
+}: AnchorProps) {
+  if (href.startsWith('http')) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        {...props}
+      />
+    )
+  }
+
+  return (
+    <Link href={href} passHref>
+      <a {...props} />
+    </Link>
+  )
+}
+
+const components = {
+  a: Anchor
+}
 
 export default function PostPage ({ post }: { post: Post }) {
   const MDXContent = useMDXComponent(post.body.code)
