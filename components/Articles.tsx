@@ -13,7 +13,7 @@ export function Articles ({ data }: any) {
             <h2 className="text-3xl font-bold mb-2 text-center">
               Latest articles
             </h2>
-            <h4 className="mb-14 text-xl dark:text-gray-100 text-gray-500 text-center">
+            <h4 className="mb-10 text-xl dark:text-gray-100 text-gray-500 text-center">
               Prepared especially for you
             </h4>
             <ArticlesList data={data} />

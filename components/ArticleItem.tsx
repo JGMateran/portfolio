@@ -25,7 +25,7 @@ type ArticleProps = {
 
 export function ArticleItem (props: ArticleProps) {
   return (
-    <Box className="duration-150 hover:scale-105">
+    <Box className="duration-150 hover:scale-105 mt-4">
       <Link href={`/blog/${props.slug}`}>
         <a>
           <div className="relative w-full overflow-hidden pt-[100%]">
@@ -34,7 +34,7 @@ export function ArticleItem (props: ArticleProps) {
               width="573"
               height="573"
               alt={props.title}
-              className="absolute inset-0 object-cover"
+              className="w-full h-full absolute inset-0 object-cover"
             />
           </div>
           <div className="p-6">
