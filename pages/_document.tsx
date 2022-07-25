@@ -15,7 +15,7 @@ export default class MyDocument extends Document {
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
           <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet" />
 
-          <script async defer data-website-id="853d84ff-d935-4bec-85e7-2a02112e7db8" src="https://umami-rosy-theta.vercel.app/umami.js"></script>
+          <script async defer data-website-id="fc50a674-0289-4fec-8873-ce79dfca03fa" src="https://umami-qa34psfio-reburn.vercel.app/umami.js"></script>
         </Head>
 
         <body className="dark:bg-gray-900">
