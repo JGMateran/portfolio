@@ -8,12 +8,10 @@ import { NextSeo } from 'next-seo'
 import { HOME_URL } from '@/lib/constants'
 
 import { Skills } from '@/components/Skills'
-import { Container } from '@/components/Container'
-import { Heading } from '@/components/Heading'
-import { Text } from '@/components/Text'
 import { HomeLayout } from '@/layouts/HomeLayout'
 import { Projects } from '@/components/Projects'
 import { Articles } from '@/components/Articles'
+import { Experience } from '@/components/Experience'
 
 function sortByPostDate (a: Post, b: Post) {
   return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
@@ -44,22 +42,9 @@ export default function Home ({ posts }: HomeProps) {
         }}
       />
 
-      <Container className="text-center" gap={false} size="small">
-        <Heading size="big" as="h3" className="mb-4">
-          Experience
-        </Heading>
-        <Text className="mb-4">
-          Although I am currently focused on the React and TypeScript ecosystem I have done a bit of everything, I have created libraries to automate tedious processes and I have also been developing complex systems that are maintained for a long time.
-        </Text>
-        <Text>
-          I enjoy the process of transforming an idea into a product and iterating on it, and I want to believe that by doing so I am making every day a better place for everyone.
-        </Text>
-      </Container>
-
+      <Experience />
       <Skills />
-
       <Projects />
-
       <Articles data={posts} />
     </HomeLayout>
   )
