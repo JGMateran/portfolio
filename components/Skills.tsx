@@ -69,10 +69,10 @@ const allSkills = [
     name: 'Firebase',
     icon: FirebaseIcon
   },
-  {
-    name: 'Supabase',
-    icon: SupabaseIcon
-  },
+  // {
+  //   name: 'Supabase',
+  //   icon: SupabaseIcon
+  // },
   {
     name: 'Vitest',
     icon: VitestIcon
