@@ -19,7 +19,7 @@ export function Articles ({ data }: any) {
             <ArticlesList data={data} />
             <div className="my-14 text-center">
               <Link href="/blog">
-                <a href="#">
+                <a>
                   See all articles
                 </a>
               </Link>
