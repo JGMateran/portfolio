@@ -12,7 +12,7 @@ import { VueIcon } from '@/components/Icon/VueIcon'
 import { FirebaseIcon } from '@/components/Icon/FirebaseIcon'
 import { CSSIcon } from '@/components/Icon/CSSIcon'
 import { PlaywrightIcon } from '@/components/Icon/Playwright'
-// import { SupabaseIcon } from '@/components/Icon/SupabaseIcon'
+import { SupabaseIcon } from '@/components/Icon/SupabaseIcon'
 import { ReactTestingLibrary } from '@/components/Icon/ReactTestingLibraryIcon'
 import { ViteIcon } from '@/components/Icon/ViteIcon'
 import { JestIcon } from '@/components/Icon/JestIcon'
@@ -69,10 +69,10 @@ const allSkills = [
     name: 'Firebase',
     icon: FirebaseIcon
   },
-  // {
-  //   name: 'Supabase',
-  //   icon: SupabaseIcon
-  // },
+  {
+    name: 'Supabase',
+    icon: SupabaseIcon
+  },
   {
     name: 'Vitest',
     icon: VitestIcon
