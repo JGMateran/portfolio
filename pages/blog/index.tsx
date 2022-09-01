@@ -6,20 +6,6 @@ import { allPosts } from 'contentlayer/generated'
 import { Layout } from '@/layouts/Layout'
 import { ArticlesList } from '@/components/ArticlesList'
 
-function sortByPostDate (a: Post, b: Post) {
-  return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-}
-
-export const getStaticProps: GetStaticProps = (context) => {
-  const posts = allPosts.sort(sortByPostDate)
-
-  return {
-    props: {
-      posts
-    }
-  }
-}
-
 export default function BlogPage ({
   posts
 }: {
@@ -34,4 +20,14 @@ export default function BlogPage ({
       }
     </Layout>
   )
+}
+
+export const getStaticProps: GetStaticProps = () => {
+  const posts = allPosts.sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+
+  return {
+    props: {
+      posts
+    }
+  }
 }

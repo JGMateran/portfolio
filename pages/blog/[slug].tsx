@@ -12,37 +12,7 @@ import { BlogLayout } from '@/layouts/BlogLayout'
 
 import { HOME_URL } from '@/lib/constants'
 
-import Link from 'next/link'
-
-type AnchorProps = ComponentPropsWithoutRef<'a'> & {
-  href: string
-}
-
-function Anchor ({
-  href,
-  ...props
-}: AnchorProps) {
-  if (href.startsWith('http')) {
-    return (
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        {...props}
-      />
-    )
-  }
-
-  return (
-    <Link href={href} passHref>
-      <a {...props} />
-    </Link>
-  )
-}
-
-const components = {
-  a: Anchor
-}
+import { MDXComponents } from '@/lib/MDXComponents'
 
 export default function PostPage ({ post }: { post: Post }) {
   const MDXContent = useMDXComponent(post.body.code)
@@ -58,7 +28,7 @@ export default function PostPage ({ post }: { post: Post }) {
         description={post.description}
       />
       <div className="prose dark:prose-dark w-full mx-auto max-w-full">
-        <MDXContent components={components} />
+        <MDXContent components={MDXComponents} />
       </div>
     </BlogLayout>
   )

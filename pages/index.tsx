@@ -13,15 +13,7 @@ import { Projects } from '@/components/Projects'
 import { Articles } from '@/components/Articles'
 import { Experience } from '@/components/Experience'
 
-function sortByPostDate (a: Post, b: Post) {
-  return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-}
-
-type HomeProps = {
-  posts: Post[]
-}
-
-export default function Home ({ posts }: HomeProps) {
+export default function Home ({ posts }: { posts: Post[] }) {
   return (
     <HomeLayout>
       <NextSeo
@@ -51,7 +43,9 @@ export default function Home ({ posts }: HomeProps) {
 }
 
 export const getStaticProps: GetStaticProps = () => {
-  const posts = allPosts.sort(sortByPostDate).slice(0, 3)
+  const posts = allPosts
+    .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+    .slice(0, 3)
 
   return {
     props: {
