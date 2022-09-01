@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import Link from 'next/link'
 
@@ -36,26 +36,23 @@ function Drawer ({ open }: { open: boolean }) {
           'fixed inset-0 duration-200 sm:hidden',
           {
             'visible bg-gray-900/90': open,
-            'invisible bg-translate': !open
+            'invisible bg-transparent': !open
           }
         )}
       />
       <div className="flex text-xl fixed inset-0 flex-col p-10 justify-center items-center space-y-6 font-bold sm:relative sm:text-sm sm:font-normal sm:justify-start sm:items-center sm:flex-row sm:space-y-0 sm:space-x-4 sm:p-0">
         {
-          items.map((item, index) => (
+          items.map((item) => (
             <Anchor
               key={item.key}
               href={item.href}
               className={clsx(
-                'duration-200 text-white',
+                'duration-200 text-white sm:dark:text-white sm:text-black',
                 {
                   'translate-x-0 sm:opacity-100 sm:translate-0': open,
-                  'opacity-0 -translate-x-4 sm:opacity-100 sm:translate-0': !open
+                  'opacity-0 -translate-y-2 sm:opacity-100 sm:translate-y-0': !open
                 }
               )}
-              style={{
-                transitionDelay: `${index * 100}ms`
-              }}
             >
               {item.content}
             </Anchor>
@@ -76,6 +73,19 @@ function Drawer ({ open }: { open: boolean }) {
 export function Navbar () {
   const [isOpen, setIsOpen] = useState(false)
 
+  useEffect(
+    () => {
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth
+
+      if (isOpen) {
+        document.body.setAttribute('style', `overflow: hidden; padding-right: ${scrollbarWidth}px`)
+      } else {
+        document.body.setAttribute('style', 'overflow: normal; padding-right: 0;')
+      }
+    },
+    [isOpen]
+  )
+
   return (
     <div className="sticky top-0 z-30">
       <Container className="flex items-center h-14 px-6">
@@ -84,8 +94,9 @@ export function Navbar () {
             reburn.dev
           </Link>
         </h2>
-        {/* <div className="flex items-center text-sm space-x-4 dark:text-gray-300 text-black" /> */}
+
         <Drawer open={isOpen} />
+
         <BurgerButton
           className="relative z-40 sm:hidden"
           open={isOpen}
