@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+	scroll-behavior: smooth;
+}
+
 code[class*="language-"],
 pre[class*="language-"] {
 	font-family: 'Fira Code', Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
