@@ -1,5 +1,3 @@
-import type { ComponentPropsWithoutRef } from 'react'
-
 import type { GetStaticProps } from 'next'
 import type { Post } from 'contentlayer/generated'
 
