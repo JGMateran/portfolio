@@ -2,6 +2,7 @@ import Link from 'next/link'
 
 import { Container } from '@/components/Container'
 import { Anchor } from '@/components/Anchor'
+import { Button } from '@/components/Button'
 
 export function Navbar () {
   return (
@@ -14,7 +15,8 @@ export function Navbar () {
         </h2>
         <div className="flex items-center text-sm space-x-4 dark:text-gray-300 text-black">
           <Anchor href="/blog">Blog</Anchor>
-          <Anchor href="#contact">Contact me</Anchor>
+          <Anchor href="/curriculum-english.pdf">Curriculum</Anchor>
+          <Button as="a" href="#contact">Contact me</Button>
         </div>
       </Container>
     </div>
