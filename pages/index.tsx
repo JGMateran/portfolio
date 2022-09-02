@@ -45,7 +45,7 @@ export default function Home ({ posts }: { posts: Post[] }) {
 export const getStaticProps: GetStaticProps = () => {
   const posts = allPosts
     .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
-    .slice(0, 3)
+    .slice(0, 2)
 
   return {
     props: {
