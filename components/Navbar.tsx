@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 
 import Link from 'next/link'
 
@@ -73,6 +73,8 @@ function Drawer ({ open }: { open: boolean }) {
 export function Navbar () {
   const [isOpen, setIsOpen] = useState(false)
 
+  const interval = useRef<number | null>(null)
+
   useEffect(
     () => {
       const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth
@@ -80,7 +82,19 @@ export function Navbar () {
       if (isOpen) {
         document.body.setAttribute('style', `overflow: hidden; padding-right: ${scrollbarWidth}px`)
       } else {
-        document.body.setAttribute('style', 'overflow: normal; padding-right: 0;')
+        interval.current = window.setTimeout(
+          () => {
+            document.body.setAttribute('style', 'overflow: normal; padding-right: 0;')
+          },
+          205
+        )
+      }
+
+      return () => {
+        if (interval.current) {
+          window.clearInterval(interval.current)
+          interval.current = null
+        }
       }
     },
     [isOpen]
