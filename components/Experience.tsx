@@ -7,13 +7,13 @@ const experience = [
     from: 'August, 2017',
     to: 'Present',
     title: 'Frontend web developer at zkreations',
-    description: 'I worked primarily on creating and maintaining two JavaScript libraries that facilitated the product creation process. As team leader I encouraged the change of the methodology to an agile environment which optimized the development process.'
+    description: 'My main work is the creation of tools made in JavaScript that streamline the process of creating software and eliminate repetitive tasks. I have also developed two component libraries (of which I am the main maintainer) that have meant an increase in productivity.'
   },
   {
     from: 'April, 2015',
     to: 'August, 2017',
     title: 'Freelancer',
-    description: 'My main works consist in layout and modification of websites, as well as creating custom functionalities and also creating applications from scratch.'
+    description: 'During this time my main work was developing websites for brands and individuals. I also created from scratch custom functionalities for existing projects. In addition to creating applications from scratch and maintaining several of them.'
   }
 ]
 
