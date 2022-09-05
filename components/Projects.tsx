@@ -48,9 +48,9 @@ function Project ({
         </a>
       </div>
       <div className="p-6 md:w-1/2">
-        <div className="flex items-center mb-1">
+        <div className="flex items-center mb-2">
           <a href={url} rel="noopener noreferrer" target="_blank" className="truncate">
-            <Heading size="small" className="truncate mt-2">
+            <Heading size="small" className="truncate">
               {title}
             </Heading>
           </a>
@@ -62,7 +62,7 @@ function Project ({
             <ExternalLink className="w-5 h-5" />
           </a>
         </div>
-        <Text className="line-clamp-2 text-sm leading-7 mb-3">
+        <Text className="line-clamp-2 text-sm leading-6 mb-4">
           {description}
         </Text>
         <div className="flex flex-wrap items-center">
