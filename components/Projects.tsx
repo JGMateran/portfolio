@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 
-import Image from 'next/future/image'
+import Image from "next/image";
 
 import { Heading } from '@/components/Heading'
 import { Text } from '@/components/Text'

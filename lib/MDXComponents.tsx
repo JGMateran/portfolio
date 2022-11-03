@@ -20,11 +20,7 @@ function Anchor ({
     )
   }
 
-  return (
-    <Link href={href} passHref>
-      <a {...props} />
-    </Link>
-  )
+  return <Link href={href} passHref {...props} />
 }
 
 export const MDXComponents = {

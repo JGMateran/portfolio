@@ -10,10 +10,11 @@ export default function Error404 () {
         <p className="dark:text-gray-100 text-gray-600 text-sm leading-6 mb-6">
           The page you are looking for might have been removed,had its name changed or is temporarily unavalible.
         </p>
-        <Link href="/">
-          <a className="active:scale-95 bg-blue-600 inline-block py-3 px-6 font-bold text-white rounded-full">
-            Back to home
-          </a>
+        <Link
+          href="/"
+          className="active:scale-95 bg-blue-600 inline-block py-3 px-6 font-bold text-white rounded-full"
+        >
+          Back to home
         </Link>
       </div>
     </div>

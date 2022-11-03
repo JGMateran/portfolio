@@ -1,4 +1,4 @@
-import Image from 'next/future/image'
+import Image from 'next/image'
 import Link from 'next/link'
 
 import { format, parseISO } from 'date-fns'
@@ -27,7 +27,7 @@ export function ArticleItem (props: ArticleProps) {
   return (
     <Box className="duration-150 hover:scale-105 mt-4">
       <Link href={`/blog/${props.slug}`}>
-        <a>
+        <div>
           <div className="relative w-full overflow-hidden pt-[100%]">
             <Image
               src={props.image}
@@ -50,7 +50,7 @@ export function ArticleItem (props: ArticleProps) {
               {props.description}
             </p>
           </div>
-        </a>
+        </div>
       </Link>
     </Box>
   )

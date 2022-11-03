@@ -38,57 +38,53 @@ export function BlogLayout ({
   description: string,
   url: string
 }) {
-  return (
-    <>
-      <div className="selection:bg-blue-600 selection:text-white min-h-screen dark:bg-gray-800 bg-slate-200 dark:text-white leading-7">
-        <Header>
-          <Container>
-            <Heading size="big" className="mb-4 leading-10">
-              {title}
-            </Heading>
-            <Text>
-              {description}
-            </Text>
+  return <>
+    <div className="selection:bg-blue-600 selection:text-white min-h-screen dark:bg-gray-800 bg-slate-200 dark:text-white leading-7">
+      <Header>
+        <Container>
+          <Heading size="big" className="mb-4 leading-10">
+            {title}
+          </Heading>
+          <Text>
+            {description}
+          </Text>
 
-            <div className="flex items-center mt-10">
-              <Link href="/">
-                <a href="#" className="flex items-center">
-                  <ArrowLeft className="mr-4" />
-                  <span className="text-sm">
-                    Back to home
-                  </span>
+          <div className="flex items-center mt-10">
+            <Link href="/" className="flex items-center">
+              <ArrowLeft className="mr-4" />
+              <span className="text-sm">
+                Back to home
+              </span>
+            </Link>
+
+            <div className="flex-1"></div>
+
+            <div className="flex items-center">
+              <span className="mr-4 text-sm">
+                Share on
+              </span>
+              <div className="flex space-x-3 items-center">
+                <a target="_blank" rel="noopener noreferrer" href={shareOnFacebookUrl(url)}>
+                  <Facebook className="w-5 h-5" />
                 </a>
-              </Link>
-
-              <div className="flex-1"></div>
-
-              <div className="flex items-center">
-                <span className="mr-4 text-sm">
-                  Share on
-                </span>
-                <div className="flex space-x-3 items-center">
-                  <a target="_blank" rel="noopener noreferrer" href={shareOnFacebookUrl(url)}>
-                    <Facebook className="w-5 h-5" />
-                  </a>
-                  <a target="_blank" rel="noopener noreferrer" href={shareOnTwitterUrl(url)}>
-                    <Twitter className="w-5 h-5" />
-                  </a>
-                  <a target="_blank" rel="noopener noreferrer" href={shareOnLinkedinUrl(url)}>
-                    <Linkedin className="w-5 h-5" />
-                  </a>
-                </div>
+                <a target="_blank" rel="noopener noreferrer" href={shareOnTwitterUrl(url)}>
+                  <Twitter className="w-5 h-5" />
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href={shareOnLinkedinUrl(url)}>
+                  <Linkedin className="w-5 h-5" />
+                </a>
               </div>
             </div>
-          </Container>
-        </Header>
+          </div>
+        </Container>
+      </Header>
 
-        <main className="dark:bg-gray-900 dark:text-white min-h-screen bg-white">
-          <Container>
-            {children}
-          </Container>
-          <Footer />
-        </main>
-      </div>
-    </>
-  )
+      <main className="dark:bg-gray-900 dark:text-white min-h-screen bg-white">
+        <Container>
+          {children}
+        </Container>
+        <Footer />
+      </main>
+    </div>
+  </>
 }

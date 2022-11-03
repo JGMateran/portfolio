@@ -5,10 +5,5 @@ const {
 } = require('next-contentlayer')
 
 module.exports = withContentlayer({
-  reactStrictMode: false,
-  experimental: {
-    images: {
-      allowFutureImage: true
-    }
-  }
+  reactStrictMode: false
 })

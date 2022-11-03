@@ -19,12 +19,5 @@ export function Anchor ({
     className
   )
 
-  return (
-    <Link href={href}>
-      <a
-        className={classes}
-        {...props}
-      />
-    </Link>
-  )
+  return <Link href={href} className={classes} {...props} />
 }
