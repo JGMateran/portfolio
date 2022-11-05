@@ -27,7 +27,7 @@ export function ArticleItem (props: ArticleProps) {
   return (
     <Box className="duration-150 hover:scale-105 mt-4">
       <Link href={`/blog/${props.slug}`}>
-        <div>
+        <article>
           <div className="relative w-full overflow-hidden pt-[100%]">
             <Image
               src={props.image}
@@ -38,9 +38,9 @@ export function ArticleItem (props: ArticleProps) {
             />
           </div>
           <div className="p-6">
-            <h2 className="font-bold line-clamp-2 text-xl">
+            <h3 className="font-bold line-clamp-2 text-xl">
               {props.title}
-            </h2>
+            </h3>
             <div className="text-xs my-3 dark:text-gray-100 text-slate-500">
               <span>{formatDate(props.publishedAt)}</span>
               {' — '}
@@ -50,7 +50,7 @@ export function ArticleItem (props: ArticleProps) {
               {props.description}
             </p>
           </div>
-        </div>
+        </article>
       </Link>
     </Box>
   )

@@ -20,7 +20,7 @@ const experience = [
 export function Experience () {
   return (
     <Container gap={false}>
-      <Heading size="big" as="h3" className="mb-14 text-center">
+      <Heading size="big" className="mb-14 text-center">
         Work experience
       </Heading>
       {
@@ -30,7 +30,7 @@ export function Experience () {
               <Text className="text-xs md:text-right leading-7">{from} — {to}</Text>
             </div>
             <div className="flex-1">
-              <Heading as="h2" className="mb-2" size="small">{title}</Heading>
+              <Heading as="h3" className="mb-2" size="small">{title}</Heading>
               <Text>{description}</Text>
             </div>
           </div>

@@ -12,6 +12,7 @@ function DarkModeSwitch ({
 }) {
   return (
     <button
+      aria-label="Toggle darkmode"
       onClick={onClick}
       className="dark:bg-blue-500 bg-slate-500 dark:shadow-lg dark:shadow-blue-600/30 focus:outline-none focus-visible:ring-2 w-10 h-6 p-1 rounded-full duration-150 hover:cursor-pointer"
     >

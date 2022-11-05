@@ -24,13 +24,13 @@ export function Footer () {
               Follow me on
             </span>
             <div className="flex items-center space-x-3">
-              <a href="https://www.linkedin.com/in/reburning" target="_blank" rel="noopener noreferrer">
+              <a aria-label="LinkedIn" href="https://www.linkedin.com/in/reburning" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="https://www.github.com/JGMateran" target="_blank" rel="noopener noreferrer">
+              <a aria-label="GitHub" href="https://www.github.com/JGMateran" target="_blank" rel="noopener noreferrer">
                 <GitHub className="w-5 h-5" />
               </a>
-              <a href="https://www.twitter.com/reburn_dev" target="_blank" rel="noopener noreferrer">
+              <a aria-label="Twitter" href="https://www.twitter.com/reburn_dev" target="_blank" rel="noopener noreferrer">
                 <Twitter className="w-5 h-5" />
               </a>
             </div>

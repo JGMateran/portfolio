@@ -19,7 +19,7 @@ export function Heading <T extends ValidHeadings> (
   props: HeadingProps<T>
 ) {
   const {
-    as: Component = 'h4',
+    as: Component = 'h2',
     className,
     size = 'large',
     ...rest

@@ -103,11 +103,9 @@ export function Navbar () {
   return (
     <div className="sticky top-0 z-30">
       <Container className="flex items-center h-14 px-6">
-        <h2 className="text-xl font-bold flex-1 dark:text-white">
-          <Link href="/">
-            reburn.dev
-          </Link>
-        </h2>
+        <Link href="/" className="text-xl font-bold flex-1 dark:text-white">
+          reburn.dev
+        </Link>
 
         <Drawer open={isOpen} />
 

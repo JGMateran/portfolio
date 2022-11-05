@@ -49,11 +49,11 @@ function Project ({
       </div>
       <div className="p-6 md:w-1/2">
         <div className="flex items-center mb-2">
-          <a href={url} rel="noopener noreferrer" target="_blank" className="truncate">
-            <Heading size="small" className="truncate">
+          <Heading as="h3" size="small" className="truncate">
+            <a href={url} rel="noopener noreferrer" target="_blank" className="truncate">
               {title}
-            </Heading>
-          </a>
+            </a>
+          </Heading>
           <div className="flex-1"></div>
           <a href={github} className="ml-4" rel="noopener noreferrer" target="_blank">
             <GitHub className="w-5 h-5" />
