@@ -14,7 +14,7 @@ export function Anchor ({
   ...props
 }: AnchorProps) {
   const classes = clsx(
-    'focus:outline-none focus-visible:ring-2 hover:cursor-pointer text-black dark:text-white',
+    'hover:cursor-pointer text-black dark:text-white',
     style.anchor,
     className
   )

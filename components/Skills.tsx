@@ -113,9 +113,9 @@ export function Skills () {
         <h2 className="text-3xl font-bold mb-2 text-center">
           Technologies
         </h2>
-        <h4 className="mb-14 text-xl dark:text-gray-100 text-gray-500 text-center">
+        <div className="mb-14 text-xl dark:text-gray-100 text-gray-500 text-center">
           I have worked with
-        </h4>
+        </div>
       </Container>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">

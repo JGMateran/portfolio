@@ -22,7 +22,7 @@ export function HomeLayout ({
         <Header>
           <Container className="flex flex-col md:flex-row md:items-center">
             <div className="md:order-2 flex justify-center mb-10 md:mb-0">
-              <div className="w-40 h-40 md:w-60 md:h-60 rounded-full rounded-full overflow-hidden">
+              <div className="w-40 h-40 md:w-60 md:h-60 rounded-full overflow-hidden">
                 <Image
                   src="/images/face.jpeg"
                   width="240"

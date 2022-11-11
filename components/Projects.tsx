@@ -33,7 +33,7 @@ function Project ({
   url,
   github,
   technologies
-}: Omit<ProjectTypes, 'id'>) {
+}: ProjectTypes) {
   return (
     <div className="md:flex md:items-center bg-slate-100 dark:bg-gray-800 border border-dotted border-slate-400 dark:border-gray-600 rounded-lg mb-8">
       <div className="md:w-1/2">
@@ -55,10 +55,10 @@ function Project ({
             </a>
           </Heading>
           <div className="flex-1"></div>
-          <a href={github} className="ml-4" rel="noopener noreferrer" target="_blank">
+          <a aria-label="Go to the project on GitHub" href={github} className="ml-4" rel="noopener noreferrer" target="_blank">
             <GitHub className="w-5 h-5" />
           </a>
-          <a href={url} className="ml-4" rel="noopener noreferrer" target="_blank">
+          <a aria-label="Go to the project" href={url} className="ml-4" rel="noopener noreferrer" target="_blank">
             <ExternalLink className="w-5 h-5" />
           </a>
         </div>
@@ -128,8 +128,8 @@ export function Projects () {
       </Heading>
 
       {
-        projects.map(({ id, ...rest }) => (
-          <Project key={id} {...rest} />
+        projects.map((project) => (
+          <Project key={project.id} {...project} />
         ))
       }
     </>
