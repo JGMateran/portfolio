@@ -3,8 +3,6 @@ import Link from 'next/link'
 
 import { format, parseISO } from 'date-fns'
 
-import { Box } from '@/components/Box'
-
 function formatDate (date: string) {
   return format(
     parseISO(date),
