@@ -29,8 +29,8 @@ export function Layout ({
           </Text>
 
           <div className="flex items-center mt-10">
-            <Link href="/" className="flex items-center">
-              <div>
+            <Link href="/">
+              <div className="flex items-center">
                 <ArrowLeft className="mr-4" />
                 <span className="text-sm">
                   Back to home
