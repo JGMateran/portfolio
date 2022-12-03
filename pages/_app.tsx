@@ -6,11 +6,17 @@ import '../styles/globals.css'
 import Router from 'next/router'
 
 import { ThemeProvider } from 'next-themes'
-
 import { Analytics } from '@vercel/analytics/react'
+import { Inter } from '@next/font/google'
 
 import 'nprogress/nprogress.css'
 import NProgress from 'nprogress'
+
+import clsx from 'clsx'
+
+const inter = Inter({
+  variable: '--font-inter'
+})
 
 function MyApp ({ Component, pageProps }: AppProps) {
   useEffect(
@@ -36,13 +42,12 @@ function MyApp ({ Component, pageProps }: AppProps) {
     []
   )
   return (
-    <>
-      <ThemeProvider attribute="class" defaultTheme="dark" enableColorScheme={false}>
+    <ThemeProvider attribute="class" defaultTheme="dark" enableColorScheme={false}>
+      <main className={clsx(inter.variable, 'font-inter')}>
         <Component {...pageProps} />
-      </ThemeProvider>
-
-      <Analytics />
-    </>
+        <Analytics />
+      </main>
+    </ThemeProvider>
   )
 }
 

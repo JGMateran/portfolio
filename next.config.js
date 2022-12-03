@@ -5,5 +5,15 @@ const {
 } = require('next-contentlayer')
 
 module.exports = withContentlayer({
-  reactStrictMode: false
+  reactStrictMode: false,
+  experimental: {
+    fontLoaders: [
+      {
+        loader: '@next/font/google',
+        options: {
+          subsets: ['latin']
+        }
+      }
+    ]
+  }
 })
