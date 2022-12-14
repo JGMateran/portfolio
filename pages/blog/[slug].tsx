@@ -3,12 +3,12 @@ import type { Post } from 'contentlayer/generated'
 
 import { NextSeo } from 'next-seo'
 
+import { HOME_URL } from '@/lib/constants'
+
 import { allPosts } from 'contentlayer/generated'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 
 import { BlogLayout } from '@/layouts/BlogLayout'
-
-import { HOME_URL } from '@/lib/constants'
 
 import { MDXComponents } from '@/lib/MDXComponents'
 
@@ -24,6 +24,16 @@ export default function PostPage ({ post }: { post: Post }) {
       <NextSeo
         title={post.title}
         description={post.description}
+        openGraph={{
+          type: 'article',
+          images: [
+            {
+              url: `${HOME_URL}/api/og?title=${post.title}`,
+              width: 1200,
+              height: 630
+            }
+          ]
+        }}
       />
       <div className="prose dark:prose-dark w-full mx-auto max-w-full">
         <MDXContent components={MDXComponents} />

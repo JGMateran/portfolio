@@ -1,8 +1,3 @@
-import { GetStaticProps } from 'next'
-
-import type { Post } from 'contentlayer/generated'
-import { allPosts } from 'contentlayer/generated'
-
 import { NextSeo } from 'next-seo'
 
 import { HOME_URL } from '@/lib/constants'
@@ -10,10 +5,9 @@ import { HOME_URL } from '@/lib/constants'
 import { Skills } from '@/components/Skills'
 import { HomeLayout } from '@/layouts/HomeLayout'
 import { Projects } from '@/components/Projects'
-import { Articles } from '@/components/Articles'
 import { Experience } from '@/components/Experience'
 
-export default function Home ({ posts }: { posts: Post[] }) {
+export default function Home () {
   return (
     <HomeLayout>
       <NextSeo
@@ -37,19 +31,6 @@ export default function Home ({ posts }: { posts: Post[] }) {
       <Experience />
       <Skills />
       <Projects />
-      <Articles data={posts} />
     </HomeLayout>
   )
-}
-
-export const getStaticProps: GetStaticProps = () => {
-  const posts = allPosts
-    .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
-    .slice(0, 2)
-
-  return {
-    props: {
-      posts
-    }
-  }
 }
