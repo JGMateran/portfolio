@@ -9,8 +9,11 @@ export default async function handler (req: NextRequest) {
   const { searchParams } = new URL(req.url)
   const text = searchParams.get('text')
 
-  const interRegular = await fetch(new URL('../../public/Inter-Regular.ttf', import.meta.url)).then((res) => res.arrayBuffer())
-  const interBold = await fetch(new URL('../../public/Inter-Bold.ttf', import.meta.url)).then((res) => res.arrayBuffer())
+  const interRegularPath = new URL('../../public/Inter-Regular.ttf', import.meta.url).toString()
+  const interBoldPath = new URL('../../public/Inter-Bold.ttf', import.meta.url).toString()
+
+  const interRegular = await fetch(interRegularPath).then((res) => res.arrayBuffer())
+  const interBold = await fetch(interBoldPath).then((res) => res.arrayBuffer())
 
   if (req.method !== 'GET') {
     return new Response(
