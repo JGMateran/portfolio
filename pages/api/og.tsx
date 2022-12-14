@@ -7,7 +7,7 @@ export const config = {
 
 export default async function handler (req: NextRequest) {
   const { searchParams } = new URL(req.url)
-  const text = searchParams.get('text')
+  const title = searchParams.get('text')
 
   const interRegularPath = new URL('../../public/Inter-Regular.ttf', import.meta.url).toString()
   const interBoldPath = new URL('../../public/Inter-Bold.ttf', import.meta.url).toString()
@@ -23,9 +23,9 @@ export default async function handler (req: NextRequest) {
     )
   }
 
-  if (!text) {
+  if (!title) {
     return new Response(
-      'text is required',
+      'title is required',
       {
         status: 422
       }
@@ -96,7 +96,7 @@ export default async function handler (req: NextRequest) {
             fontFamily: '"InterBold"'
           }}
         >
-          {text}
+          {title}
         </h2>
       </div>
     ),
