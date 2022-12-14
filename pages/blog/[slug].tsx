@@ -24,6 +24,12 @@ export default function PostPage ({ post }: { post: Post }) {
       <NextSeo
         title={post.title}
         description={post.description}
+
+        twitter={{
+          handle: '@reburn_dev',
+          cardType: 'summary_large_image'
+        }}
+
         openGraph={{
           type: 'article',
           images: [
