@@ -3,7 +3,7 @@ import type { ReactNode } from 'react'
 import clsx from 'clsx'
 
 type BoxProps = {
-  children: ReactNode,
+  children: ReactNode
   className?: string
 }
 

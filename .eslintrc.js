@@ -1,27 +1,28 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true,
-    node: true
+    es2021: true
   },
   extends: [
     'plugin:react/recommended',
-    'standard',
+    'standard-with-typescript',
     'next'
   ],
-  parser: '@typescript-eslint/parser',
+  overrides: [
+  ],
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true
-    },
     ecmaVersion: 'latest',
-    sourceType: 'module'
+    sourceType: 'module',
+    project: './tsconfig.json'
   },
   plugins: [
-    'react',
-    '@typescript-eslint'
+    'react'
   ],
   rules: {
-    'react/react-in-jsx-scope': 'off'
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/consistent-type-definitions': 'off',
+    '@typescript-eslint/strict-boolean-expressions': 'off',
+    '@typescript-eslint/no-misused-promises': 'off',
+    '@typescript-eslint/promise-function-async': 'off'
   }
 }

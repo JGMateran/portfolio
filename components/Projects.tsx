@@ -9,12 +9,12 @@ import { Divider } from '@/components/Divider'
 import { GitHub, ExternalLink } from 'react-feather'
 
 type ProjectTypes = {
-  id: number,
-  title: string,
-  description: string,
-  image: string,
-  url: string,
-  github: string,
+  id: number
+  title: string
+  description: string
+  image: string
+  url: string
+  github: string
   technologies: string[]
 }
 

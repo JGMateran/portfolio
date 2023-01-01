@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 
 type SwitchProps = {
-  active?: boolean,
+  active?: boolean
   onClick?: any
 }
 

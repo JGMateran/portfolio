@@ -5,10 +5,10 @@ import type {
 import clsx from 'clsx'
 
 type ContainerProps = {
-  children: ReactNode,
-  className?: string,
-  size?: 'small' | 'medium' | 'large',
-  gap?: boolean,
+  children: ReactNode
+  className?: string
+  size?: 'small' | 'medium' | 'large'
+  gap?: boolean
   centered?: boolean
 }
 

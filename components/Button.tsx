@@ -6,8 +6,8 @@ import {
 import clsx from 'clsx'
 
 type ButtonProps <T extends ElementType> = ComponentPropsWithoutRef<T> & {
-  as?: T,
-  variant?: 'normal' | 'outlined',
+  as?: T
+  variant?: 'normal' | 'outlined'
 }
 
 export function Button <T extends ElementType> (

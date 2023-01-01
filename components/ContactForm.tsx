@@ -17,7 +17,7 @@ import { Divider } from '@/components/Divider'
 const VALID_EMAIL_REGEXP = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/
 
 type ContactData = {
-  email: string,
+  email: string
   message: string
 }
 

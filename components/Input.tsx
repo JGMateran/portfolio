@@ -6,8 +6,8 @@ import type {
 import clsx from 'clsx'
 
 type InputProps <T extends ElementType> = ComponentPropsWithoutRef<T> & {
-  as?: T,
-  variant?: 'normal' | 'outline',
+  as?: T
+  variant?: 'normal' | 'outline'
   label?: string
 }
 

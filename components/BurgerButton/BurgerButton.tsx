@@ -5,7 +5,7 @@ import style from './BurgerButton.module.css'
 import clsx from 'clsx'
 
 type BurgerButtonProps = ComponentPropsWithoutRef<'button'> & {
-  open: boolean,
+  open: boolean
 }
 
 export function BurgerButton ({

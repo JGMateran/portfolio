@@ -11,11 +11,11 @@ function formatDate (date: string) {
 }
 
 type ArticleProps = {
-  slug: string,
-  title: string,
-  description: string,
-  publishedAt: string,
-  image: string,
+  slug: string
+  title: string
+  description: string
+  publishedAt: string
+  image: string
   readingTime: {
     text: string
   }

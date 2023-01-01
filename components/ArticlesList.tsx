@@ -2,13 +2,13 @@ import { Container } from '@/components/Container'
 import { ArticleItem } from '@/components/ArticleItem'
 
 type Articles = {
-  slug: string,
-  title: string,
-  description: string,
-  publishedAt: string,
+  slug: string
+  title: string
+  description: string
+  publishedAt: string
   readingTime: {
     text: string
-  },
+  }
   image: string
 }
 
