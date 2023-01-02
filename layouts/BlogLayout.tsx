@@ -19,8 +19,8 @@ function shareOnFacebookUrl (url: string) {
   return `https://www.facebook.com/sharer.php?u=${url}`
 }
 
-function shareOnTwitterUrl (url: string) {
-  return `https://twitter.com/intent/tweet?url=${url}`
+function shareOnTwitterUrl (url: string, title: string) {
+  return `https://twitter.com/intent/tweet?url=${url}&title=${title}`
 }
 
 function shareOnLinkedinUrl (url: string) {
@@ -33,9 +33,9 @@ export function BlogLayout ({
   description,
   url
 }: {
-  children: ReactNode,
-  title: string,
-  description: string,
+  children: ReactNode
+  title: string
+  description: string
   url: string
 }) {
   return <>
@@ -67,7 +67,7 @@ export function BlogLayout ({
                 <a target="_blank" rel="noopener noreferrer" href={shareOnFacebookUrl(url)}>
                   <Facebook className="w-5 h-5" />
                 </a>
-                <a target="_blank" rel="noopener noreferrer" href={shareOnTwitterUrl(url)}>
+                <a target="_blank" rel="noopener noreferrer" href={shareOnTwitterUrl(url, title)}>
                   <Twitter className="w-5 h-5" />
                 </a>
                 <a target="_blank" rel="noopener noreferrer" href={shareOnLinkedinUrl(url)}>
