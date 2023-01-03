@@ -5,6 +5,7 @@ import { allPosts } from 'contentlayer/generated'
 
 import { Layout } from '@/layouts/Layout'
 import { ArticlesList } from '@/components/ArticlesList'
+import { NextSeo } from 'next-seo'
 
 export default function BlogPage ({
   posts
@@ -13,6 +14,9 @@ export default function BlogPage ({
 }) {
   return (
     <Layout>
+      <NextSeo
+        title="The Reburn's Blog"
+      />
       {
         posts.length === 0
           ? <h2 className="text-2xl font-bold">No articles yet</h2>
