@@ -5,7 +5,7 @@ export const config = {
   runtime: 'experimental-edge'
 }
 
-export default async function handler(req: NextRequest) {
+export default async function handler (req: NextRequest) {
   const { searchParams } = new URL(req.url)
   const title = searchParams.get('title')
 
@@ -16,11 +16,7 @@ export default async function handler(req: NextRequest) {
   const interBold = await fetch(interBoldPath).then((res) => res.arrayBuffer())
 
   if (req.method !== 'GET') {
-    return new Response(
-      `Method ${req.method} is not allowed`, {
-      status: 400
-    }
-    )
+    return new Response(`Method ${req.method} is not allowed`, { status: 400 })
   }
 
   if (!title) {
