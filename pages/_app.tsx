@@ -1,6 +1,8 @@
 import type { AppProps } from 'next/app'
 import { useEffect } from 'react'
 
+import { DefaultSeo } from 'next-seo'
+
 import '../styles/globals.css'
 
 import Router from 'next/router'
@@ -44,6 +46,14 @@ function MyApp ({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider attribute="class" defaultTheme="dark" enableColorScheme={false}>
       <main className={clsx(inter.variable, 'font-inter')}>
+        <DefaultSeo
+          additionalLinkTags={[
+            {
+              rel: 'icon',
+              href: '/favicon.svg'
+            }
+          ]}
+        />
         <Component {...pageProps} />
         <Analytics />
       </main>

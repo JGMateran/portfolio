@@ -14,7 +14,7 @@ import { Footer } from '@/components/Footer'
 export function HomeLayout ({
   children
 }: {
-  children: ReactNode,
+  children: ReactNode
 }) {
   return (
     <>
