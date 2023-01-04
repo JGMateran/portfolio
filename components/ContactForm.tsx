@@ -58,7 +58,7 @@ export function ContactForm () {
 
   return (
     <>
-      <div id="contact" className="pb-14 mt-14 border-t border-white -mx-6 border-dotted border-slate-500 dark:border-gray-600"></div>
+      <div id="contact" className="pb-14 mt-14 border-t -mx-6 border-dotted border-slate-500 dark:border-gray-600"></div>
 
       <Container size="small" gap={false}>
         <div className="text-center">
