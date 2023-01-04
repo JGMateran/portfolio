@@ -5,15 +5,6 @@ export const config = {
   runtime: 'experimental-edge'
 }
 
-{/* <img
-  src="https://www.github.com/JGMateran.png"
-  width={100}
-  height={100}
-  style={{
-    borderRadius: '50%'
-  }}
-/> */}
-
 export default async function handler(req: NextRequest) {
   const { searchParams } = new URL(req.url)
   const title = searchParams.get('title')
