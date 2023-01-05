@@ -16,11 +16,7 @@ export default async function handler (req: NextRequest) {
   const interBold = await fetch(interBoldPath).then((res) => res.arrayBuffer())
 
   if (req.method !== 'GET') {
-    return new Response(
-      `Method ${req.method} is not allowed`, {
-        status: 400
-      }
-    )
+    return new Response(`Method ${req.method} is not allowed`, { status: 400 })
   }
 
   if (!title) {
@@ -40,16 +36,38 @@ export default async function handler (req: NextRequest) {
           width: '100%',
           display: 'flex',
           flexDirection: 'column',
-          backgroundColor: '#16191d',
+          backgroundColor: '#fff',
+          padding: 64,
+          background: '#1b1e23',
           color: '#fff',
-          padding: 48,
           fontFamily: '"Inter"'
         }}
       >
+        <div style={{ display: 'flex' }}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 160 160" fill="none">
+            <rect width="160" height="160" rx="10" fill="white" />
+            <path d="M53.321 117V44.2727H82.0142C87.5066 44.2727 92.1941 45.2552 96.0767 47.2202C99.983 49.1615 102.954 51.9195 104.99 55.4943C107.05 59.0455 108.08 63.224 108.08 68.0298C108.08 72.8594 107.038 77.0142 104.955 80.4943C102.871 83.9508 99.8527 86.6023 95.8991 88.4489C91.9692 90.2955 87.2107 91.2188 81.6236 91.2188H62.4119V78.8608H79.1378C82.0734 78.8608 84.5118 78.4583 86.4531 77.6534C88.3944 76.8485 89.8385 75.6411 90.7855 74.0312C91.7562 72.4214 92.2415 70.4209 92.2415 68.0298C92.2415 65.6151 91.7562 63.5791 90.7855 61.9219C89.8385 60.2647 88.3826 59.0099 86.4176 58.1577C84.4763 57.2817 82.026 56.8438 79.0668 56.8438H68.6974V117H53.321ZM92.5966 83.9034L110.672 117H93.6974L76.0128 83.9034H92.5966Z" fill="#1B1E23" />
+          </svg>
+        </div>
         <div
           style={{
             display: 'flex',
-            alignItems: 'center'
+            flex: 1,
+            flexDirection: 'column',
+            justifyContent: 'center'
+          }}
+        >
+          <h2
+            style={{
+              fontSize: 64,
+              margin: 0,
+              fontFamily: '"InterBold"'
+            }}
+          >{title}</h2>
+        </div>
+        <div
+          style={{
+            display: 'flex'
           }}
         >
           <img
@@ -57,47 +75,35 @@ export default async function handler (req: NextRequest) {
             width={100}
             height={100}
             style={{
-              borderRadius: '50%'
+              borderRadius: '50%',
+              width: 64,
+              height: 64
             }}
           />
           <div
             style={{
-              marginLeft: 32,
               display: 'flex',
-              flexDirection: 'column'
+              paddingLeft: 20,
+              flexDirection: 'column',
+              justifyContent: 'center'
             }}
           >
             <h2
               style={{
-                margin: 0,
-                fontSize: 32,
-                marginBottom: 8,
+                fontSize: 28,
+                margin: '0 0 2px',
                 fontFamily: '"InterBold"'
               }}
-            >
-              Greg.tsx
-            </h2>
-            <p
+            >Greg.tsx</h2>
+            <span
               style={{
+                fontSize: 20,
                 margin: 0,
-                fontSize: 24,
-                color: '#646D7D'
+                color: '#8e96a4'
               }}
-            >
-              @reburn_dev
-            </p>
+            >@reburn_dev</span>
           </div>
         </div>
-        <div style={{ flex: 1 }}></div>
-        <h2
-          style={{
-            margin: 0,
-            fontSize: 54,
-            fontFamily: '"InterBold"'
-          }}
-        >
-          {title}
-        </h2>
       </div>
     ),
     {
