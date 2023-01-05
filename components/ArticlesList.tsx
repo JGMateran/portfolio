@@ -1,7 +1,5 @@
 import { Container } from '@/components/Container'
 import { ArticleItem } from '@/components/ArticleItem'
-import { Text } from './Text'
-import { Heading } from './Heading'
 
 type Articles = {
   slug: string
