@@ -2,6 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { format, parseISO } from 'date-fns'
+import { Heading } from './Heading'
+import { Text } from './Text'
 
 function formatDate (date: string) {
   return format(
@@ -21,31 +23,28 @@ type ArticleProps = {
   }
 }
 
-export function ArticleItem (props: ArticleProps) {
+export function ArticleItem ({
+  description,
+  publishedAt,
+  readingTime,
+  title,
+  slug
+}: ArticleProps) {
   return (
-    <Link href={`/blog/${props.slug}`} className="dark:bg-gray-800 bg-slate-100 border border-dotted dark:border-gray-600 border-slate-400 rounded-md overflow-hidden focus-visible:scale-105 hover:scale-105 duration-100">
+    <Link href={`/blog/${slug}`}>
       <article>
-        <div className="relative w-full overflow-hidden pt-[100%]">
-          <Image
-            src={props.image}
-            width="573"
-            height="573"
-            alt={props.title}
-            className="w-full h-full absolute inset-0 object-cover"
-          />
-        </div>
-        <div className="p-6">
-          <h3 className="font-bold line-clamp-2 text-xl">
-            {props.title}
-          </h3>
-          <div className="text-xs my-3 dark:text-gray-100 text-slate-500">
-            <span>{formatDate(props.publishedAt)}</span>
-            {' — '}
-            <span>{props.readingTime.text}</span>
+        <div className="mb-14 md:flex">
+          <div className="mb-4 pr-8 w-48">
+            <Text className="text-xs md:text-right leading-7">
+              {formatDate(publishedAt)} {' — '} {readingTime.text}
+            </Text>
           </div>
-          <p className="line-clamp-3 text-sm leading-6 dark:text-gray-100 text-slate-700">
-            {props.description}
-          </p>
+          <div className="flex-1">
+            <Heading as="h3" className="mb-2" size="small">
+              {title}
+            </Heading>
+            <Text>{description}</Text>
+          </div>
         </div>
       </article>
     </Link>
