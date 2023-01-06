@@ -7,7 +7,8 @@
     "build": "next build",
     "postbuild": "NODE_OPTIONS='--experimental-json-modules' node ./scripts/generate-rss.mjs && node ./scripts/generate-sitemap.mjs",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@formspree/react": "^2.2.4",
@@ -35,6 +36,8 @@
     "rss": "^1.2.2"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.4.0",
+    "@commitlint/config-conventional": "^17.4.0",
     "@tailwindcss/line-clamp": "^0.4.0",
     "@tailwindcss/typography": "^0.5.2",
     "@types/node": "17.0.25",
@@ -52,6 +55,7 @@
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.31.11",
+    "husky": "^8.0.0",
     "postcss": "^8.4.12",
     "tailwindcss": "^3.0.24",
     "typescript": "^4.9.4"
