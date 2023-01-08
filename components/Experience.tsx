@@ -19,7 +19,7 @@ const experience = [
 
 export function Experience () {
   return (
-    <Container gap={false}>
+    <Container>
       <Heading size="big" className="mb-14 text-center">
         Work experience
       </Heading>

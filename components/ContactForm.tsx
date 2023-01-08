@@ -41,11 +41,14 @@ export function ContactForm () {
   if (state.succeeded) {
     return (
       <>
-        <Divider />
-        <Container size="small" gap={false}>
+        <Container>
+          <Divider />
+        </Container>
+
+        <Container size="small">
           <Box className="p-10">
             <h2 className="text-3xl font-bold mb-4">
-              Successfully sent
+              Your message has been sent
             </h2>
             <Text>
               Thank you very much for contacting me, I will get back to you as soon as possible.
@@ -58,9 +61,10 @@ export function ContactForm () {
 
   return (
     <>
-      <div id="contact" className="pb-14 mt-14 border-t -mx-6 border-dotted border-slate-500 dark:border-gray-600"></div>
-
-      <Container size="small" gap={false}>
+      <Container>
+        <div id="contact" className="pb-14 mt-14 border-t -mx-6 border-dotted border-slate-500 dark:border-gray-600"></div>
+      </Container>
+      <Container size="small">
         <div className="text-center">
           <Heading size="big" className="mb-4">
             Contact me

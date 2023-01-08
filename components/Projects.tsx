@@ -7,6 +7,7 @@ import { Text } from '@/components/Text'
 import { Divider } from '@/components/Divider'
 
 import { GitHub, ExternalLink } from 'react-feather'
+import { Container } from '@/components/Container'
 
 type ProjectTypes = {
   id: number
@@ -120,7 +121,7 @@ const projects: ProjectTypes[] = [
 
 export function Projects () {
   return (
-    <>
+    <Container>
       <Divider />
 
       <Heading size="big" className="text-center mb-8">
@@ -132,6 +133,6 @@ export function Projects () {
           <Project key={project.id} {...project} />
         ))
       }
-    </>
+    </Container>
   )
 }

@@ -14,6 +14,7 @@ import { Container } from '@/components/Container'
 import { Heading } from '@/components/Heading'
 import { Footer } from '@/components/Footer'
 import { Text } from '@/components/Text'
+import { ContactForm } from '@/components/ContactForm'
 
 function shareOnFacebookUrl (url: string) {
   return `https://www.facebook.com/sharer.php?u=${url}`
@@ -83,6 +84,8 @@ export function BlogLayout ({
         <Container>
           {children}
         </Container>
+
+        <ContactForm />
         <Footer />
       </main>
     </div>

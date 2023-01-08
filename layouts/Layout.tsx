@@ -11,13 +11,14 @@ import { Container } from '@/components/Container'
 import { Heading } from '@/components/Heading'
 import { Footer } from '@/components/Footer'
 import { Text } from '@/components/Text'
+import { ContactForm } from '@/components/ContactForm'
 
 export function Layout ({
   children
 }: {
   children: ReactNode
 }) {
-  return <>
+  return (
     <div className="selection:bg-blue-600 selection:text-white min-h-screen dark:bg-gray-800 bg-slate-200 dark:text-white leading-7">
       <Header>
         <Container>
@@ -45,8 +46,10 @@ export function Layout ({
         <Container>
           {children}
         </Container>
+
+        <ContactForm />
         <Footer />
       </main>
     </div>
-  </>
+  )
 }

@@ -107,16 +107,15 @@ export function Skills () {
   }
 
   return (
-    <>
+    <Container>
       <Divider />
-      <Container className="text-center mb-8 my-14" gap={false} size="small">
-        <h2 className="text-3xl font-bold mb-2 text-center">
-          Technologies
-        </h2>
-        <div className="mb-14 text-xl dark:text-gray-100 text-gray-500 text-center">
-          I have worked with
-        </div>
-      </Container>
+
+      <h2 className="text-3xl font-bold mb-2 text-center">
+        Technologies
+      </h2>
+      <div className="mb-14 text-xl dark:text-gray-100 text-gray-500 text-center">
+        I have worked with
+      </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
         {
@@ -141,6 +140,6 @@ export function Skills () {
           )
         }
       </div>
-    </>
+    </Container>
   )
 }

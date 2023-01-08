@@ -4,18 +4,13 @@ import {
   Twitter
 } from 'react-feather'
 
-import { ContactForm } from '@/components/ContactForm'
 import { DarkmodeButton } from '@/components/DarkmodeButton'
 import { Container } from '@/components/Container'
-import { Divider } from './Divider'
+import { Divider } from '@/components/Divider'
 
 export function Footer () {
   return (
     <>
-      <Container>
-        <ContactForm />
-      </Container>
-
       <Container>
         <Divider />
         <div className="flex sm:flex-row flex-col items-center my-14 text-black dark:text-white">
