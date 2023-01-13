@@ -17,6 +17,7 @@ import NProgress from 'nprogress'
 import clsx from 'clsx'
 
 const inter = Inter({
+  subsets: ['latin'],
   variable: '--font-inter'
 })
 
