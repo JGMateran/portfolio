@@ -1,9 +1,7 @@
-import type { ReactNode } from 'react'
-
 import { useForm as useFormpree } from '@formspree/react'
 import { useForm } from 'react-hook-form'
 
-import { ArrowRight, AlertCircle } from 'react-feather'
+import { ArrowRight } from 'react-feather'
 
 import { Container } from '@/components/Container'
 import { Button } from '@/components/Button'
@@ -13,20 +11,13 @@ import { Social } from '@/components/Social'
 
 import { Box } from '@/components/Box'
 import { Divider } from '@/components/Divider'
+import { Badge } from '@/components/Badge'
 
 const VALID_EMAIL_REGEXP = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/
 
 type ContactData = {
   email: string
   message: string
-}
-
-function Badge ({ children }: { children: ReactNode }) {
-  return (
-    <span className="p-4 justify-center text-sm flex items-center dark:text-white text-red-600">
-      <AlertCircle className="mr-3" /> {children}
-    </span>
-  )
 }
 
 export function ContactForm () {
