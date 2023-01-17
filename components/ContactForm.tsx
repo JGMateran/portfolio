@@ -78,6 +78,7 @@ export function ContactForm () {
               type="text"
               className="block p-3 border-2 rounded-md w-full dark:bg-gray-800 dark:focus:border-gray-500 focus:outline-none dark:border-gray-600 border-gray-100 focus:border-gray-200 bg-slate-100 placeholder-gray-500"
               placeholder="john@doe.com"
+              autoComplete="off"
               {...register('email', {
                 required: true,
                 pattern: VALID_EMAIL_REGEXP
