@@ -1,6 +1,8 @@
 import { useForm as useFormpree } from '@formspree/react'
 import { useForm } from 'react-hook-form'
 
+import Textarea from 'react-textarea-autosize'
+
 import { ArrowRight } from 'react-feather'
 
 import { Container } from '@/components/Container'
@@ -93,9 +95,10 @@ export function ContactForm () {
             <span className="block mb-2 text-sm font-bold">
               Message
             </span>
-            <textarea
-              className="block p-3 border-2 rounded-md w-full dark:bg-gray-800 dark:focus:border-gray-500 focus:outline-none dark:border-gray-600 border-gray-100 focus:border-gray-200 bg-slate-100 placeholder-gray-500 h-36 resize-none"
+            <Textarea
+              className="block p-3 border-2 rounded-md w-full dark:bg-gray-800 dark:focus:border-gray-500 focus:outline-none dark:border-gray-600 border-gray-100 focus:border-gray-200 bg-slate-100 placeholder-gray-500"
               placeholder="Hello, I would like to hire you"
+              minRows={4}
               {...register('message', {
                 required: true
               })}
