@@ -39,7 +39,7 @@ export function BlogLayout ({
   description: string
   url: string
 }) {
-  return <>
+  return (
     <div className="selection:bg-blue-600 selection:text-white min-h-screen dark:bg-gray-800 bg-slate-200 dark:text-white leading-7">
       <Header>
         <Container>
@@ -89,5 +89,5 @@ export function BlogLayout ({
         <Footer />
       </main>
     </div>
-  </>
+  )
 }
