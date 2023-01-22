@@ -1,21 +1,11 @@
 import { Container } from '@/components/Container'
 import { ArticleItem } from '@/components/ArticleItem'
-
-type Articles = {
-  slug: string
-  title: string
-  description: string
-  publishedAt: string
-  readingTime: {
-    text: string
-  }
-  image: string
-}
+import { Post } from 'contentlayer/generated'
 
 export function ArticlesList ({
   data
 }: {
-  data: Articles[]
+  data: Post[]
 }) {
   if (data.length === 0) return null
 
@@ -23,7 +13,7 @@ export function ArticlesList ({
     <Container size="medium" gap={false}>
       {
         data.map((article, index) => (
-          <ArticleItem key={index} {...article} />
+          <ArticleItem key={index} data={article} />
         ))
       }
     </Container>

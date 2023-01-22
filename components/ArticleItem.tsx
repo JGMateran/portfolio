@@ -1,3 +1,5 @@
+import type { Post } from 'contentlayer/generated'
+
 import Link from 'next/link'
 
 import { format, parseISO } from 'date-fns'
@@ -11,24 +13,19 @@ function formatDate (date: string) {
   )
 }
 
-type ArticleProps = {
-  slug: string
-  title: string
-  description: string
-  publishedAt: string
-  image: string
-  readingTime: {
-    text: string
-  }
+type ArticleItemProps = {
+  data: Post
 }
 
 export function ArticleItem ({
-  description,
-  publishedAt,
-  readingTime,
-  title,
-  slug
-}: ArticleProps) {
+  data: {
+    description,
+    publishedAt,
+    readingTime,
+    title,
+    slug
+  }
+}: ArticleItemProps) {
   return (
     <Link href={`/blog/${slug}`}>
       <article>
