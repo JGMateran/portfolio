@@ -1,6 +1,4 @@
-import type {
-  ReactNode
-} from 'react'
+import type { ReactNode } from 'react'
 
 import Image from 'next/image'
 

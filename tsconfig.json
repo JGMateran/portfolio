@@ -17,11 +17,11 @@
     "baseUrl": ".",
     "paths": {
       "contentlayer/generated": ["./.contentlayer/generated"],
-      "@/components/*": ["components/*"],
-      "@/pages/*": ["pages/*"],
-      "@/layouts/*": ["layouts/*"],
-      "@/hooks/*": ["hooks/*"],
-      "@/lib/*": ["lib/*"],
+      "@/components/*": ["./components/*"],
+      "@/pages/*": ["./pages/*"],
+      "@/layouts/*": ["./layouts/*"],
+      "@/hooks/*": ["./hooks/*"],
+      "@/lib/*": ["./lib/*"],
     }
   },
   "include": [
