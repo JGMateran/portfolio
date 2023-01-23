@@ -28,8 +28,8 @@ export function ArticleItem ({
 }: ArticleItemProps) {
   return (
     <Link href={`/blog/${slug}`}>
-      <article>
-        <div className="mb-14 md:flex">
+      <article className="active:scale-95 dark:hover:bg-gray-800 hover:bg-slate-200 px-6 py-8 -mx-6">
+        <div className="md:flex">
           <div className="mb-4 pr-8 w-48">
             <Text className="text-xs md:text-right leading-7">
               {formatDate(publishedAt)} {' — '} {readingTime.text}
