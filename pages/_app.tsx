@@ -21,7 +21,7 @@ const inter = Inter({
   variable: '--font-inter'
 })
 
-function MyApp ({ Component, pageProps }: AppProps) {
+export default function MyApp ({ Component, pageProps }: AppProps) {
   useEffect(
     () => {
       const handleRouteStart = () => {
@@ -61,5 +61,3 @@ function MyApp ({ Component, pageProps }: AppProps) {
     </ThemeProvider>
   )
 }
-
-export default MyApp
