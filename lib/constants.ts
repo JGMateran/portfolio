@@ -1,3 +1,1 @@
-export const HOME_URL = process.env.NODE_ENV === 'development'
-  ? 'http://localhost:3000'
-  : 'https://www.reburn.dev'
+export const HOME_URL = process.env.NEXT_PUBLIC_HOME_URL!
