@@ -6,7 +6,7 @@ import { format, parseISO } from 'date-fns'
 import { Heading } from './Heading'
 import { Text } from './Text'
 
-function formatDate (date: string) {
+function transformDate (date: string) {
   return format(
     parseISO(date),
     'MMM dd, yyyy'
@@ -32,7 +32,7 @@ export function ArticleItem ({
         <div className="md:flex">
           <div className="mb-4 pr-8 w-48">
             <Text className="text-xs md:text-right leading-7">
-              {formatDate(publishedAt)} {' — '} {readingTime.text}
+              {transformDate(publishedAt)} {' — '} {readingTime.text}
             </Text>
           </div>
           <div className="flex-1">
