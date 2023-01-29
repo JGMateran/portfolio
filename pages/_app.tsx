@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 
 import { DefaultSeo } from 'next-seo'
 
-import '../styles/globals.css'
+import '@/styles/globals.css'
 
 import Router from 'next/router'
 

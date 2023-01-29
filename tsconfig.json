@@ -22,6 +22,7 @@
       "@/layouts/*": ["./layouts/*"],
       "@/hooks/*": ["./hooks/*"],
       "@/lib/*": ["./lib/*"],
+      "@/styles/*": ["./styles/*"],
     }
   },
   "include": [
