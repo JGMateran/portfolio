@@ -17,7 +17,7 @@ export function BurgerButton ({
     <button
       aria-label="Toggle menu"
       className={clsx(
-        'inline-block w-10 h-10 rounded-full focus:outline-none focus-visible:ring-2 flex items-center justify-center hover:cursor-pointer',
+        'w-10 h-10 rounded-full focus:outline-none focus-visible:ring-2 flex items-center justify-center hover:cursor-pointer',
         className
       )}
       {...props}
