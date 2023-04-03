@@ -1,14 +1,14 @@
 import type { ComponentPropsWithoutRef } from 'react'
 import Link from 'next/link'
 
-type AnchorProps = ComponentPropsWithoutRef<'a'> & {
-  href: string
-}
+type AnchorProps = ComponentPropsWithoutRef<'a'>
 
 function Anchor ({
   href,
   ...props
 }: AnchorProps) {
+  if (typeof href !== 'string') return null
+
   if (href.startsWith('http')) {
     return (
       <a
@@ -20,7 +20,7 @@ function Anchor ({
     )
   }
 
-  return <Link href={href} passHref {...props} />
+  return <Link href={href} {...props} />
 }
 
 export const MDXComponents = {

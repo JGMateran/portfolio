@@ -42,7 +42,9 @@ export default function PostPage ({ post }: { post: Post }) {
         }}
       />
       <div className="prose dark:prose-dark w-full mx-auto max-w-full">
-        <MDXContent components={MDXComponents} />
+        <MDXContent
+          components={MDXComponents}
+        />
       </div>
     </BlogLayout>
   )
