@@ -9,7 +9,7 @@ import Router from 'next/router'
 
 import { ThemeProvider } from 'next-themes'
 import { Analytics } from '@vercel/analytics/react'
-import { Inter } from '@next/font/google'
+import { Inter } from 'next/font/google'
 
 import 'nprogress/nprogress.css'
 import NProgress from 'nprogress'
