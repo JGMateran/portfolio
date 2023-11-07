@@ -9,7 +9,7 @@ import { Divider } from '@/components/Divider'
 import { GitHub, ExternalLink } from 'react-feather'
 import { Container } from '@/components/Container'
 
-type ProjectTypes = {
+interface ProjectTypes {
   id: number
   title: string
   description: string

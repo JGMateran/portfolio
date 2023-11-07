@@ -24,6 +24,7 @@
         "@typescript-eslint/promise-function-async": "off",
         "@typescript-eslint/no-non-null-assertion": "off",
         "@next/next/no-img-element": "off",
-        "@typescript-eslint/no-misused-promises": "off"
+        "@typescript-eslint/no-misused-promises": "off",
+        "@typescript-eslint/triple-slash-reference": "off"
     }
 }

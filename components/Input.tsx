@@ -33,7 +33,7 @@ export function Input <T extends ElementType> (
   return (
     <label className="flex flex-col my-8">
       {
-        label && (
+        label != null && (
           <span className="block text-sm font-semibold mb-2">
             {label}
           </span>

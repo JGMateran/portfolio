@@ -3,13 +3,13 @@ import clsx from 'clsx'
 import { Anchor } from '@/components/Anchor'
 import { Button } from './Button'
 
-type DrawerItem = {
+interface DrawerItem {
   key: number
   content: string
   href: string
 }
 
-type DrawerProps = {
+interface DrawerProps {
   open: boolean
   items: DrawerItem[]
 }

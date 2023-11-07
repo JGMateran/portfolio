@@ -1,5 +1,5 @@
 import { ImageResponse } from '@vercel/og'
-import { NextRequest } from 'next/server'
+import { type NextRequest } from 'next/server'
 
 export const config = {
   runtime: 'edge'
@@ -19,7 +19,7 @@ export default async function handler (req: NextRequest) {
     return new Response(`Method ${req.method} is not allowed`, { status: 400 })
   }
 
-  if (!title) {
+  if (typeof title !== 'string') {
     return new Response(
       'title is required',
       {
@@ -71,6 +71,7 @@ export default async function handler (req: NextRequest) {
           }}
         >
           <img
+            alt=""
             src="https://www.github.com/JGMateran.png"
             width={100}
             height={100}

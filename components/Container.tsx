@@ -2,7 +2,7 @@ import type { ReactNode } from 'react'
 
 import clsx from 'clsx'
 
-type ContainerProps = {
+interface ContainerProps {
   children: ReactNode
   className?: string
   size?: 'small' | 'medium' | 'large'

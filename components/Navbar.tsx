@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useState, useRef } from 'react'
 
 import Link from 'next/link'
@@ -40,7 +42,7 @@ export function Navbar () {
       }
 
       return () => {
-        if (interval.current) {
+        if (interval.current != null) {
           window.clearInterval(interval.current)
           interval.current = null
         }
@@ -50,7 +52,7 @@ export function Navbar () {
   )
 
   return (
-    <div className="sticky top-0 z-30">
+    <div className="fixed z-30 w-full">
       <Container className="flex items-center h-14 px-6">
         <Link href="/" className="text-xl font-bold dark:text-white">
           reburn.dev
@@ -63,7 +65,9 @@ export function Navbar () {
         <BurgerButton
           className="relative z-40 sm:hidden"
           open={isOpen}
-          onClick={() => setIsOpen((prev) => !prev)}
+          onClick={() => {
+            setIsOpen((prev) => !prev)
+          }}
         />
       </Container>
     </div>

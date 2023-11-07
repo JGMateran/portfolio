@@ -1,3 +1,5 @@
+'use client'
+
 import { useForm as useFormpree } from '@formspree/react'
 import { useForm } from 'react-hook-form'
 
@@ -17,7 +19,7 @@ import { Badge } from '@/components/Badge'
 
 const VALID_EMAIL_REGEXP = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/
 
-type ContactData = {
+interface ContactData {
   email: string
   message: string
 }

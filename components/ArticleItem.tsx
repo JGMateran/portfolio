@@ -1,4 +1,4 @@
-import type { Post } from 'contentlayer/generated'
+import { type Post } from 'contentlayer/generated'
 
 import Link from 'next/link'
 
@@ -13,7 +13,7 @@ function transformDate (date: string) {
   )
 }
 
-type ArticleItemProps = {
+interface ArticleItemProps {
   data: Post
 }
 

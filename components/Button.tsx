@@ -1,6 +1,6 @@
 import {
-  ComponentPropsWithoutRef,
-  ElementType
+  type ComponentPropsWithoutRef,
+  type ElementType
 } from 'react'
 
 import clsx from 'clsx'
