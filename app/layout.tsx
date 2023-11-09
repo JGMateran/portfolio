@@ -14,6 +14,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.reburn.dev'),
   icons: {
     icon: './favicon.svg'
   },
