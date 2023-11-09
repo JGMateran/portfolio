@@ -5,7 +5,6 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "NODE_OPTIONS='--experimental-json-modules' node ./scripts/generate-rss.mjs",
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install"
