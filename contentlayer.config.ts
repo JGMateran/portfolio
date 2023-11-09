@@ -1,6 +1,6 @@
 import { makeSource } from 'contentlayer/source-files'
 
-// import rehypePrism from 'rehype-prism-plus'
+import rehypePrism from 'rehype-prism-plus'
 import rehypeSlug from 'rehype-slug'
 import remarkGfm from 'remark-gfm'
 
@@ -14,9 +14,9 @@ export default makeSource({
       remarkGfm
     ],
     rehypePlugins: [
-      // [rehypePrism, {
-      //   showLineNumbers: true
-      // }],
+      [rehypePrism, {
+        showLineNumbers: true
+      }],
       rehypeSlug
     ]
   }
