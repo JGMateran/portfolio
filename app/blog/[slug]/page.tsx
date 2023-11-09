@@ -28,12 +28,26 @@ export async function generateMetadata ({
 
   const { title, description } = post
 
+  const ogImage = new URL(`${env.NEXT_PUBLIC_HOME_URL}/api/og`)
+  ogImage.searchParams.set('title', title)
+
   return {
     title,
     description,
+    openGraph: {
+      title,
+      description,
+      type: 'article',
+      images: [
+        {
+          url: ogImage
+        }
+      ]
+    },
     twitter: {
       title,
-      description
+      description,
+      images: [ogImage]
     }
   }
 }
