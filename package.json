@@ -16,12 +16,10 @@
     "clsx": "^2.0.0",
     "contentlayer": "^0.2.4",
     "date-fns": "^2.30.0",
-    "globby": "^13.2.2",
     "lint-staged": "^15.0.2",
     "next": "^14.0.1",
     "next-contentlayer": "^0.2.4",
     "next-themes": "^0.2.1",
-    "prettier": "^3.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-feather": "^2.0.10",
@@ -31,7 +29,6 @@
     "rehype-prism-plus": "^1.6.3",
     "rehype-slug": "^6.0.0",
     "remark-gfm": "^4.0.0",
-    "rss": "^1.2.2",
     "zod": "^3.22.4"
   },
   "devDependencies": {
@@ -40,7 +37,6 @@
     "@tailwindcss/line-clamp": "^0.4.4",
     "@tailwindcss/typography": "^0.5.10",
     "@types/node": "20.8.10",
-    "@types/nprogress": "^0.2.2",
     "@types/react": "18.2.36",
     "@types/react-dom": "18.2.14",
     "@typescript-eslint/eslint-plugin": "^6.10.0",
