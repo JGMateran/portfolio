@@ -29,6 +29,7 @@ export function DarkmodeButton () {
   const { theme, setTheme } = useTheme()
 
   const handleClick = () => {
+    console.log('click')
     setTheme(theme === 'dark' ? 'light' : 'dark')
   }
 

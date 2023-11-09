@@ -37,10 +37,9 @@ export default function RootLayout ({
         <main className="dark:bg-gray-900 dark:text-white min-h-screen bg-white">
           <Providers>
             {children}
+            <ContactForm />
+            <Footer />
           </Providers>
-
-          <ContactForm />
-          <Footer />
         </main>
       </body>
     </html>
