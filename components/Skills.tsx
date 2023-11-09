@@ -1,3 +1,5 @@
+'use client'
+
 import { GitIcon } from '@/components/Icon/GitIcon'
 import { HTMLIcon } from '@/components/Icon/HTMLIcon'
 import { JavaScriptIcon } from '@/components/Icon/JavaScriptIcon'

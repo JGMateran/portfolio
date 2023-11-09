@@ -29,10 +29,10 @@ function Header ({
         </Text>
 
         <div className="flex items-center mt-10">
-          <Link href="/blog" className="flex items-center">
+          <Link href="/" className="flex items-center">
             <ArrowLeft className="mr-4" />
             <span className="text-sm">
-              Back to posts
+              Back to home
             </span>
           </Link>
         </div>

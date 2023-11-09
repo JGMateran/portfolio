@@ -11,7 +11,7 @@ export function Header ({
     <>
       <Navbar />
 
-      <div className="pb-14 py-4">
+      <div className="py-14">
         <div className="h-14 bg-slate-200 dark:bg-gray-800 sticky top-0 z-10"></div>
         <div>
           {children}

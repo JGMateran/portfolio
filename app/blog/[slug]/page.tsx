@@ -33,8 +33,7 @@ export async function generateMetadata ({
     description,
     twitter: {
       title,
-      description,
-      card: 'summary_large_image'
+      description
     }
   }
 }
