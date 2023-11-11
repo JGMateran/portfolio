@@ -19,11 +19,6 @@ import { Badge } from '@/components/Badge'
 
 const VALID_EMAIL_REGEXP = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/
 
-interface ContactData {
-  email: string
-  message: string
-}
-
 export function ContactForm () {
   const [state, onSubmit] = useFormpree('xnqwobwa')
 
@@ -31,7 +26,7 @@ export function ContactForm () {
     register,
     handleSubmit,
     formState: { errors }
-  } = useForm<ContactData>()
+  } = useForm()
 
   if (state.succeeded) {
     return (
