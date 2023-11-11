@@ -3,7 +3,6 @@
 import { type ReactNode } from 'react'
 
 import { ThemeProvider } from 'next-themes'
-import { Analytics } from '@vercel/analytics/react'
 
 export function Providers ({
   children
@@ -18,7 +17,6 @@ export function Providers ({
       enableColorScheme={false}
     >
       {children}
-      <Analytics />
     </ThemeProvider>
   )
 }

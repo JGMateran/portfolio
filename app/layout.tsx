@@ -1,6 +1,8 @@
 import { type ReactNode } from 'react'
 import '@/styles/globals.css'
 
+import { Analytics } from '@vercel/analytics/react'
+
 import { Inter } from 'next/font/google'
 import { Providers } from './providers'
 import clsx from 'clsx'
@@ -41,6 +43,8 @@ export default function RootLayout ({
             <Footer />
           </Providers>
         </main>
+
+        <Analytics />
       </body>
     </html>
   )
