@@ -17,10 +17,6 @@ export async function GET (req: NextRequest) {
     new URL('../../../public/Inter-Regular.ttf', import.meta.url)
   ).then((res) => res.arrayBuffer())
 
-  const interBold = fetch(
-    new URL('../../../public/Inter-Bold.ttf', import.meta.url)
-  ).then((res) => res.arrayBuffer())
-
   return new ImageResponse(
     (
       <div
@@ -53,8 +49,7 @@ export async function GET (req: NextRequest) {
           <h2
             style={{
               fontSize: 64,
-              margin: 0,
-              fontFamily: '"InterBold"'
+              margin: 0
             }}
           >{title}</h2>
         </div>
@@ -85,8 +80,7 @@ export async function GET (req: NextRequest) {
             <h2
               style={{
                 fontSize: 28,
-                margin: '0 0 2px',
-                fontFamily: '"InterBold"'
+                margin: '0 0 2px'
               }}
             >Greg.tsx</h2>
             <span
@@ -107,10 +101,6 @@ export async function GET (req: NextRequest) {
         {
           data: await interRegular,
           name: 'Inter'
-        },
-        {
-          data: await interBold,
-          name: 'InterBold'
         }
       ]
     }
