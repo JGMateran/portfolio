@@ -2,91 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-	scroll-behavior: smooth;
+code {
+	counter-reset: line;
 }
 
-code[class*="language-"],
-pre[class*="language-"] {
-	font-family: 'Fira Code', Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-	@apply selection:bg-blue-600 selection:text-white text-base;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	word-wrap: normal;
-	line-height: 1.5;
+code > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
 
-	-moz-tab-size: 2;
-	-o-tab-size: 2;
-	tab-size: 2;
-
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
-}
-
-code[class*="language-"] {
-	display: inline-block;
-	min-width: 100%;
-}
-
-.token.keyword,
-.token.punctuation,
-.token.rule,
-.token.combinator {
-	@apply text-cyan-300;
-}
-
-.token.string,
-.token.attr-value {
-	@apply text-green-300;
-}
-
-.token.function {
-	@apply text-blue-300;
-}
-
-.token.tag,
-.token.selector,
-.token.number,
-.token.unit,
-.token.color {
-	@apply text-red-300;
-}
-
-.token.attr-name,
-.token.pseudo-class,
-.token.property {
-	@apply text-purple-300;
-}
-
-.token.maybe-class-name,
-.token.class {
-	@apply text-orange-300;
-}
-
-.token.comment {
-	@apply text-gray-400;
-}
-
-.code-line.line-number::before {
-	content: attr(line);
 	width: 3.1rem;
 	padding-right: 1rem;
 	text-align: right;
 	display: inline-block;
-	@apply text-slate-400 bg-slate-800;
+	background-color: #282c34;
+	color: #495163;
 	position: sticky;
 	left: 0;
 }
 
-.code-line {
-	display: block;
-	@apply pr-6;
+code[data-language] {
+	font-family: 'Fira Code', Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1rem;
 }
 
-.code-line.highlight-line::before,
-.code-line.highlight-line {
-	background-color: #293548;
+code[data-language] > span[data-highlighted-line],
+code[data-language] > span[data-highlighted-line]::before {
+	background-color: #2c313c;
 }

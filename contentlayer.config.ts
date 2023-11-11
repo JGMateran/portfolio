@@ -1,23 +1,57 @@
-import { makeSource } from 'contentlayer/source-files'
+import {
+  type ComputedFields,
+  defineDocumentType,
+  makeSource
+} from 'contentlayer/source-files'
 
-import rehypePrism from 'rehype-prism-plus'
+import readingTime from 'reading-time'
+import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeSlug from 'rehype-slug'
-import remarkGfm from 'remark-gfm'
 
-import { Blog } from './data/definitions/blog'
+const computedFields: ComputedFields = {
+  readingTime: {
+    type: 'json',
+    resolve: (doc) => readingTime(doc.body.raw)
+  },
+  slug: {
+    type: 'string',
+    resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, '')
+  }
+}
+
+const Post = defineDocumentType(() => ({
+  name: 'Post',
+  filePathPattern: 'blog/**/*.mdx',
+  contentType: 'mdx',
+  fields: {
+    title: {
+      type: 'string',
+      required: true
+    },
+    publishedAt: {
+      type: 'date',
+      required: true
+    },
+    description: {
+      type: 'string',
+      required: true
+    }
+  },
+  computedFields
+}))
 
 export default makeSource({
   contentDirPath: 'data',
-  documentTypes: [Blog],
+  documentTypes: [Post],
   mdx: {
-    remarkPlugins: [
-      remarkGfm
-    ],
     rehypePlugins: [
-      [rehypePrism, {
-        showLineNumbers: true
-      }],
-      rehypeSlug
+      rehypeSlug,
+      [
+        rehypePrettyCode,
+        {
+          theme: 'one-dark-pro'
+        }
+      ]
     ]
   }
 })
