@@ -14,7 +14,7 @@ interface ProjectTypes {
   title: string
   description: string
   image: string
-  url: string
+  url?: string
   github: string
   technologies: string[]
 }
@@ -59,9 +59,15 @@ function Project ({
           <a aria-label="Go to the project on GitHub" href={github} className="ml-4" rel="noopener noreferrer" target="_blank">
             <GitHub className="w-5 h-5" />
           </a>
-          <a aria-label="Go to the project" href={url} className="ml-4" rel="noopener noreferrer" target="_blank">
-            <ExternalLink className="w-5 h-5" />
-          </a>
+          {
+            url != null
+              ? (
+                <a aria-label="Go to the project" href={url} className="ml-4" rel="noopener noreferrer" target="_blank">
+                  <ExternalLink className="w-5 h-5" />
+                </a>
+                )
+              : null
+          }
         </div>
         <Text className="line-clamp-2 text-sm leading-6 mb-4">
           {description}
@@ -109,7 +115,6 @@ const projects: ProjectTypes[] = [
     title: 'Open-Source URL Shortener',
     description: 'A simple tool to shorten URLs.',
     image: '/images/03.png',
-    url: 'https://reburn-link.vercel.app',
     github: 'https://github.com/JGMateran/url-shortener',
     technologies: [
       'Next.js',
