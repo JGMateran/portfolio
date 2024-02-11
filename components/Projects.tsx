@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 
 import Image from 'next/image'
+import Link from 'next/link'
 
 import { Heading } from '@/components/Heading'
 import { Text } from '@/components/Text'
@@ -51,9 +52,20 @@ function Project ({
       <div className="p-6 md:w-1/2">
         <div className="flex items-center mb-2">
           <Heading as="h3" size="small" className="truncate">
-            <a href={url} rel="noopener noreferrer" target="_blank" className="truncate">
-              {title}
-            </a>
+            {
+              url == null
+                ? title
+                : (
+                    <Link
+                      href={url}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      className="truncate"
+                    >
+                      {title}
+                    </Link>
+                  )
+            }
           </Heading>
           <div className="flex-1"></div>
           <a aria-label="Go to the project on GitHub" href={github} className="ml-4" rel="noopener noreferrer" target="_blank">
