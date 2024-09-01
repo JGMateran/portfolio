@@ -21,5 +21,9 @@
 			"quoteStyle": "single",
 			"trailingCommas": "all"
 		}
+	},
+	"organizeImports": {
+		"enabled": true,
+		"ignore": ["node_modules", ".next", "dist", ".content-collections"]
 	}
 }
