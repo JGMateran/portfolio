@@ -1,4 +1,4 @@
-const { withContentlayer } = require('next-contentlayer')
+const { withContentCollections } = require('@content-collections/next')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = { 
@@ -6,4 +6,4 @@ const nextConfig = {
   swcMinify: true 
 }
 
-module.exports = withContentlayer(nextConfig)
+module.exports = withContentCollections(nextConfig)

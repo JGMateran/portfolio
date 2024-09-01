@@ -20,9 +20,7 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "contentlayer/generated": [
-        "./.contentlayer/generated"
-      ],
+      "content-collections": ["./.content-collections/generated"],
       "@/components/*": [
         "./components/*"
       ],
@@ -52,7 +50,6 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".contentlayer/generated",
     ".next/types/**/*.ts"
   ],
   "exclude": [
