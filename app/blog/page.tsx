@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { allPosts } from '.contentlayer/generated'
+import { allPosts } from 'content-collections'
 
 import { Container } from '@/components/Container'
 import { Heading } from '@/components/Heading'

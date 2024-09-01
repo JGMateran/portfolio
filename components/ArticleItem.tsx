@@ -1,4 +1,4 @@
-import { type Post } from 'contentlayer/generated'
+import { type Post } from 'content-collections'
 
 import Link from 'next/link'
 
@@ -13,33 +13,25 @@ function transformDate (date: string) {
   )
 }
 
-interface ArticleItemProps {
-  data: Post
-}
-
 export function ArticleItem ({
-  data: {
-    description,
-    publishedAt,
-    readingTime,
-    title,
-    slug
-  }
-}: ArticleItemProps) {
+  data
+}: {
+  data: Post
+}) {
   return (
-    <Link href={`/blog/${slug}`}>
+    <Link href={`/blog/${data.slug}`}>
       <article className="active:scale-95 dark:hover:bg-gray-800 hover:bg-slate-200 px-6 py-8 -mx-6">
         <div className="md:flex">
           <div className="mb-4 pr-8 w-48">
             <Text className="text-xs md:text-right leading-7">
-              {transformDate(publishedAt)} {' — '} {readingTime.text}
+              {transformDate(data.publishedAt)} {' — '} {data.readingTimeText}
             </Text>
           </div>
           <div className="flex-1">
             <Heading as="h3" className="mb-2" size="small">
-              {title}
+              {data.title}
             </Heading>
-            <Text>{description}</Text>
+            <Text>{data.description}</Text>
           </div>
         </div>
       </article>

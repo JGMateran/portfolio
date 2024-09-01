@@ -1,6 +1,6 @@
 import { Container } from '@/components/Container'
 import { ArticleItem } from '@/components/ArticleItem'
-import { type Post } from 'contentlayer/generated'
+import { type Post } from 'content-collections'
 
 export function ArticlesList ({
   data

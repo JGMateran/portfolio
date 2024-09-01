@@ -1,7 +1,7 @@
 import type { ComponentPropsWithoutRef } from 'react'
 import Link from 'next/link'
-import { type Post } from 'contentlayer/generated'
-import { useMDXComponent } from 'next-contentlayer/hooks'
+import { type Post } from 'content-collections'
+import { MDXContent } from '@content-collections/mdx/react'
 
 type AnchorProps = ComponentPropsWithoutRef<'a'>
 
@@ -32,12 +32,11 @@ export const MDXComponents = {
 export function Mdx ({
   code
 }: {
-  code: Post['body']['code']
+  code: Post['mdx']
 }) {
-  const MDXContent = useMDXComponent(code)
-
   return (
     <MDXContent
+      code={code}
       components={MDXComponents}
     />
   )

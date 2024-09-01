@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation'
 import env from '@/lib/env.client'
 
 import { ArrowLeft, Facebook, Linkedin, Twitter } from 'react-feather'
-import { allPosts } from '.contentlayer/generated'
+import { allPosts } from 'content-collections'
 
 import { Container } from '@/components/Container'
 import { Heading } from '@/components/Heading'
@@ -153,7 +153,7 @@ export default function SinglePostRoute ({
 
       <Container>
         <div className="prose dark:prose-dark w-full mx-auto max-w-full">
-          <Mdx code={post.body.code} />
+          <Mdx code={post.mdx} />
         </div>
       </Container>
     </>

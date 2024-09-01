@@ -1,4 +1,4 @@
-import { allPosts } from '.contentlayer/generated'
+import { allPosts } from 'content-collections'
 import { type MetadataRoute } from 'next'
 
 export default function sitemap (): MetadataRoute.Sitemap {
