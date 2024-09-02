@@ -20,6 +20,7 @@ const posts = defineCollection({
 			rehypePlugins: [
 				rehypeSlug,
 				[
+					// @ts-ignore
 					rehypePrettyCode,
 					{
 						theme: 'one-dark-pro',
