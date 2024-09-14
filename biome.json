@@ -1,7 +1,8 @@
 {
 	"$schema": "https://biomejs.dev/schemas/1.7.3/schema.json",
 	"organizeImports": {
-		"enabled": true
+		"enabled": true,
+		"ignore": ["node_modules", ".next", "dist", ".content-collections"]
 	},
 	"linter": {
 		"enabled": true,
@@ -21,9 +22,5 @@
 			"quoteStyle": "single",
 			"trailingCommas": "all"
 		}
-	},
-	"organizeImports": {
-		"enabled": true,
-		"ignore": ["node_modules", ".next", "dist", ".content-collections"]
 	}
 }
