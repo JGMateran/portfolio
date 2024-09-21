@@ -6,12 +6,14 @@ import Link from 'next/link'
 
 import { BurgerButton } from '@/components/BurgerButton'
 import { Container } from '@/components/Container'
+import { Anchor } from './Anchor'
+import { Button } from './Button'
 import { Drawer } from './Drawer'
 
 const items = [
 	{
 		key: 0,
-		content: 'Blog',
+		content: 'Articles',
 		href: '/blog',
 	},
 	{
@@ -24,34 +26,6 @@ const items = [
 export function Navbar() {
 	const [isOpen, setIsOpen] = useState(false)
 
-	const interval = useRef<number | null>(null)
-
-	useEffect(() => {
-		const scrollbarWidth =
-			window.innerWidth - document.documentElement.clientWidth
-
-		if (isOpen) {
-			document.body.setAttribute(
-				'style',
-				`overflow: hidden; padding-right: ${scrollbarWidth}px`,
-			)
-		} else {
-			interval.current = window.setTimeout(() => {
-				document.body.setAttribute(
-					'style',
-					'overflow: normal; padding-right: 0;',
-				)
-			}, 205)
-		}
-
-		return () => {
-			if (interval.current != null) {
-				window.clearInterval(interval.current)
-				interval.current = null
-			}
-		}
-	}, [isOpen])
-
 	return (
 		<div className="h-14 bg-white/80 backdrop-blur-sm dark:bg-gray-800/80 fixed top-0 w-full z-10">
 			<Container className="flex items-center h-14 px-6">
@@ -61,7 +35,18 @@ export function Navbar() {
 
 				<div className="flex-1" />
 
-				<Drawer open={isOpen} items={items} />
+				<div className="sm:flex hidden items-center gap-x-4 font-bold">
+					{items.map((item) => (
+						<Anchor key={item.key} href={item.href} className="text-sm">
+							{item.content}
+						</Anchor>
+					))}
+					<Button as="a" href="#contact">
+						Contactame
+					</Button>
+				</div>
+
+				<Drawer isOpen={isOpen} setIsOpen={setIsOpen} items={items} />
 
 				<BurgerButton
 					className="relative z-40 sm:hidden"

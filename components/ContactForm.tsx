@@ -111,7 +111,6 @@ export function ContactForm() {
 
 					<div className="flex justify-center">
 						<Button
-							variant="outlined"
 							disabled={state.submitting}
 							className="inline-flex space-x-2 items-center"
 						>
