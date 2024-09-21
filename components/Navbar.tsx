@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 
 import Link from 'next/link'
 
@@ -9,19 +9,6 @@ import { Container } from '@/components/Container'
 import { Anchor } from './Anchor'
 import { Button } from './Button'
 import { Drawer } from './Drawer'
-
-const items = [
-	{
-		key: 0,
-		content: 'Articles',
-		href: '/blog',
-	},
-	{
-		key: 1,
-		content: 'Curriculum',
-		href: '/curriculum-english.pdf',
-	},
-]
 
 export function Navbar() {
 	const [isOpen, setIsOpen] = useState(false)
@@ -36,11 +23,17 @@ export function Navbar() {
 				<div className="flex-1" />
 
 				<div className="sm:flex hidden items-center gap-x-4 font-bold">
-					{items.map((item) => (
-						<Anchor key={item.key} href={item.href} className="text-sm">
-							{item.content}
-						</Anchor>
-					))}
+					<Anchor href="/blog" className="text-sm">
+						Articles
+					</Anchor>
+					<Anchor
+						href="/curriculum-english.pdf"
+						className="text-sm"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Curriculum
+					</Anchor>
 					<Button as="a" href="#contact">
 						Contactame
 					</Button>
