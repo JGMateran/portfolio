@@ -87,9 +87,7 @@ function HeaderWithShareButtons({
 	description: string
 }) {
 	return (
-		<div className="selection:bg-blue-600 selection:text-white dark:bg-gray-800 bg-slate-200 dark:text-white leading-7 py-14">
-			<div className="h-14 bg-slate-200 dark:bg-gray-800 sticky top-0 z-10" />
-
+		<div className="selection:bg-blue-600 selection:text-white dark:bg-gray-800 bg-slate-200 dark:text-white leading-7 pt-32 pb-16">
 			<Container>
 				<Heading size="big" className="mb-4 leading-10">
 					{title}
@@ -153,12 +151,12 @@ export default function SinglePostRoute({ params }: Context) {
 				url={url}
 			/>
 
-			<div className="h-14 bg-white/80 backdrop-blur-sm dark:bg-gray-900/80 sticky top-0 z-10" />
-
-			<Container>
-				<div className="prose dark:prose-dark w-full mx-auto max-w-full">
-					<Mdx code={post.mdx} />
-				</div>
+			<Container className="my-16">
+				<main>
+					<div className="prose dark:prose-dark w-full mx-auto max-w-full">
+						<Mdx code={post.mdx} />
+					</div>
+				</main>
 			</Container>
 		</>
 	)

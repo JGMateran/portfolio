@@ -34,16 +34,19 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en" suppressHydrationWarning>
-			<body className={clsx(inter.className, 'dark:bg-gray-900')}>
+			<body
+				className={clsx(
+					inter.className,
+					'dark:bg-gray-900 dark:text-white bg-white',
+				)}
+			>
 				<Navbar />
 
-				<main className="dark:bg-gray-900 dark:text-white min-h-screen bg-white">
-					<Providers>
-						{children}
-						<ContactForm />
-						<Footer />
-					</Providers>
-				</main>
+				<Providers>
+					{children}
+					<ContactForm />
+					<Footer />
+				</Providers>
 
 				<Analytics />
 				<SpeedInsights />

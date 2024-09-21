@@ -23,7 +23,7 @@ const experience = [
 
 export function Experience() {
 	return (
-		<Container>
+		<Container className="mt-16">
 			<Heading size="big" className="mb-14 text-center">
 				Work experience
 			</Heading>

@@ -53,7 +53,7 @@ export function Navbar() {
 	}, [isOpen])
 
 	return (
-		<div className="fixed z-30 w-full">
+		<div className="h-14 bg-white/80 backdrop-blur-sm dark:bg-gray-800/80 fixed top-0 w-full z-10">
 			<Container className="flex items-center h-14 px-6">
 				<Link href="/" className="text-xl font-bold dark:text-white">
 					reburn.dev
