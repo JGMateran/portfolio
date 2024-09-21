@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { BookOpen, MessageSquare } from 'react-feather'
+import { BookOpen, File, MessageSquare } from 'react-feather'
 import { Drawer as Vaul } from 'vaul'
 
 interface DrawerProps {
@@ -27,6 +27,18 @@ export function Drawer({ isOpen, setIsOpen }: DrawerProps) {
 						>
 							<BookOpen className="size-16" />
 							<span className="ml-4 font-bold">Artículos</span>
+						</Link>
+						<Link
+							className="p-3 flex items-center text-sm hover:bg-gray-700"
+							href="/curriculum-english.pdf"
+							target="_blank"
+							rel="noopener noreferrer"
+							onClick={() => {
+								setIsOpen(false)
+							}}
+						>
+							<File className="size-16" />
+							<span className="ml-4 font-bold">Curriculum</span>
 						</Link>
 						<Link
 							className="p-3 flex items-center text-sm hover:bg-gray-700"
