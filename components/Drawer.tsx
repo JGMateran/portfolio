@@ -2,19 +2,12 @@ import Link from 'next/link'
 import { BookOpen, MessageSquare } from 'react-feather'
 import { Drawer as Vaul } from 'vaul'
 
-interface DrawerItem {
-	key: number
-	content: string
-	href: string
-}
-
 interface DrawerProps {
 	isOpen: boolean
 	setIsOpen: (open: boolean) => void
-	items: DrawerItem[]
 }
 
-export function Drawer({ isOpen, items, setIsOpen }: DrawerProps) {
+export function Drawer({ isOpen, setIsOpen }: DrawerProps) {
 	return (
 		<Vaul.Root open={isOpen} onOpenChange={setIsOpen} direction="left">
 			<Vaul.Portal>

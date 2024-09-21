@@ -46,7 +46,7 @@ export function Navbar() {
 					</Button>
 				</div>
 
-				<Drawer isOpen={isOpen} setIsOpen={setIsOpen} items={items} />
+				<Drawer isOpen={isOpen} setIsOpen={setIsOpen} />
 
 				<BurgerButton
 					className="relative z-40 sm:hidden"
