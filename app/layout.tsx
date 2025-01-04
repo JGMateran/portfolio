@@ -50,6 +50,12 @@ export default function RootLayout({
 
 				<Analytics />
 				<SpeedInsights />
+
+				<Script
+					src="https://analytics.ahrefs.com/analytics.js"
+					data-key="YuretoU6qf7vDXDQJB2ngw"
+					async
+				/>
 			</body>
 		</html>
 	)
