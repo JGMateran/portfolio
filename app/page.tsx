@@ -35,7 +35,7 @@ function Cover() {
 				<div className="md:order-2 flex justify-center mb-10 md:mb-0">
 					<div className="w-40 h-40 md:w-60 md:h-60 rounded-full overflow-hidden">
 						<Image
-							src="/images/face.jpeg"
+							src="/images/foto.webp"
 							width="240"
 							height="240"
 							alt="José Gregorio Materán"
