@@ -27,7 +27,7 @@ export function Navbar() {
 						Articles
 					</Anchor>
 					<Anchor
-						href="/curriculum-english.pdf"
+						href="http://go.reburn.dev/curriculum"
 						className="text-sm"
 						target="_blank"
 						rel="noopener noreferrer"

@@ -30,7 +30,7 @@ export function Drawer({ isOpen, setIsOpen }: DrawerProps) {
 						</Link>
 						<Link
 							className="p-3 flex items-center text-sm hover:bg-gray-700"
-							href="/curriculum-english.pdf"
+							href="http://go.reburn.dev/curriculum"
 							target="_blank"
 							rel="noopener noreferrer"
 							onClick={() => {
